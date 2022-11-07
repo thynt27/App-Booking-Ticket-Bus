@@ -22,4 +22,13 @@
     <style name="Theme.PRO1121.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.PRO1121.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="Theme.PRO1121.Toolbar" parent="ThemeOverlay.AppCompat.ActionBar" />
+
+    <style name="roundImageView" parent="" >
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">10dp</item>
+        <item name="color">@color/white</item>
+    </style>
+
 </resources>
