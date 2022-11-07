@@ -27,5 +27,5 @@
         app:layout_constraintHorizontal_bias="0.589"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/bus" />
+        app:srcCompat="@drawable/bus1" />
 </androidx.constraintlayout.widget.ConstraintLayout>
