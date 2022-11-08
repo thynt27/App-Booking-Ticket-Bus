@@ -41,6 +41,7 @@
             android:exported="false" />
         <activity
             android:name=".view.HelloActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:exported="true">
 
             <intent-filter>
