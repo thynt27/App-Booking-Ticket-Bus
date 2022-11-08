@@ -13,7 +13,7 @@
         android:theme="@style/Theme.PRO1121"
         tools:targetApi="31">
         <activity
-            android:name=".XemVeActivity"
+            android:name=".view.XemVeActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -41,10 +41,21 @@
             android:exported="false" />
         <activity
             android:name=".view.HelloActivity"
-            android:exported="false" />
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
         <activity
             android:name=".view.LoginActivity"
-            android:exported="false" />
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:exported="true" >
+
+        </activity>
         <activity
             android:name=".view.RegisterActivity"
             android:exported="false" />
@@ -53,14 +64,9 @@
             android:exported="false" />
         <activity
             android:name=".BookTicket"
-            android:exported="true"
+            android:exported="false"
             android:label="@string/app_name"
             android:theme="@style/Theme.PRO1121.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
 
             <meta-data
                 android:name="android.app.lib_name"
@@ -72,6 +78,13 @@
         <activity
             android:name=".ChooseSeat"
             android:exported="false" />
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+        <meta-data
+            android:name="com.facebook.sdk.ClientToken"
+            android:value="@string/facebook_client_token" />
     </application>
 
 </manifest>

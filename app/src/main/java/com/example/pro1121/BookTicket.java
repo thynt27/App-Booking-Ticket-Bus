@@ -23,7 +23,6 @@ public class BookTicket extends AppCompatActivity{
             Intent intent = new Intent(getApplicationContext(), ShowTicket.class);
             startActivity(intent);
         });
-        //Hello cac ban
-        //Shit
+
     }
 }

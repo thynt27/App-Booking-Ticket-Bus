@@ -29,8 +29,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentTop="true"
-                    android:layout_alignParentEnd="true"
-                    android:src="@drawable/ic_person_outline_white_24dp" />
+                    android:layout_alignParentEnd="false"
+                    android:src="@drawable/ic_back" />
 
             </RelativeLayout>
 
@@ -38,7 +38,7 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <RelativeLayout
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="-16dp"
@@ -119,8 +119,9 @@
                                 android:drawableStart="@drawable/ic_location_on_light_blue_24dp"
                                 android:drawablePadding="16dp"
                                 android:fontFamily="@font/calibri"
-                                android:hint="@string/app_name"
+                                android:hint="Destination"
                                 android:inputType="text"
+                                android:paddingTop="7dp"
                                 android:maxLines="1"
                                 android:textColor="@android:color/black"
                                 android:textSize="16sp" />
@@ -138,6 +139,7 @@
                                 android:drawableStart="@drawable/ic_location_on_light_blue_24dp"
                                 android:drawablePadding="16dp"
                                 android:fontFamily="@font/calibri"
+                                android:paddingTop="7dp"
                                 android:hint="From"
                                 android:inputType="text"
                                 android:maxLines="1"
@@ -157,6 +159,7 @@
                                 android:drawableStart="@drawable/ic_date_range_light_blue_24dp"
                                 android:drawablePadding="16dp"
                                 android:fontFamily="@font/calibri"
+                                android:paddingTop="7dp"
                                 android:hint="Select Date"
                                 android:inputType="date"
                                 android:maxLines="1"
@@ -176,7 +179,7 @@
                     android:layout_gravity="center"
                     android:layout_margin="16dp"
                     android:background="@drawable/buttonshape"
-                    android:fontFamily="@fontx/calibri"
+                    android:fontFamily="@font/calibri"
                     android:text="Search Buses"
                     android:textAllCaps="false"
                     android:textColor="#ffffff"
