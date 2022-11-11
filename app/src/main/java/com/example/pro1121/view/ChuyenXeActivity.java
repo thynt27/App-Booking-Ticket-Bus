@@ -147,9 +147,9 @@ public class ChuyenXeActivity extends AppCompatActivity implements IAdapterClick
     @Override
     public void onEditChuyenXeClick(ChuyenXE chuyenxe) {
         edtdiemdi.setText(chuyenxe.getDiemdi());
-        edtdiemden.setText(chuyenxe.getDiemdi());
-        edtdiemden.setText(chuyenxe.getDiemdi());
-        edtdiemden.setText(chuyenxe.getDiemdi());
+        edtdiemden.setText(chuyenxe.getDiemden());
+        edtgio.setText(chuyenxe.getGio());
+        edtsoxe.setText(chuyenxe.getSoxe());
         chuyenXE=chuyenxe;
     }
 
