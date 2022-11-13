@@ -28,7 +28,8 @@ import java.util.ArrayList;
 import java.util.Map;
 
 public class TimChuyenActivity extends AppCompatActivity implements IAdapterClickEvent {
-    EditText diemdi1,diemden1;
+    EditText diemden1;
+    private EditText diemdi1;
     Button btntim;
     ImageButton chuyendoi;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
