@@ -25,9 +25,7 @@
             android:layout_marginTop="16dp"
             android:fontFamily="@font/print_clearly"
             android:text="Select your bus!"
-            android:textAlignment="center"
-
-            android:textSize="18sp" />
+            android:textAlignment="center" />
 
         <LinearLayout
             android:id="@+id/linearLayout"
@@ -38,15 +36,18 @@
             android:orientation="horizontal"
             android:weightSum="100">
 
+
             <EditText
                 android:layout_width="0dp"
-                android:layout_weight="45"
                 android:layout_height="match_parent"
+                android:layout_weight="45"
                 android:textAlignment="center"
+                android:fontFamily="@font/gotham"
                 android:id="@+id/diemdi"
-                >
+                android:text="">
 
             </EditText>
+
             <ImageButton
                 android:layout_width="0dp"
                 android:id="@+id/chuyendoi"
@@ -64,8 +65,7 @@
                 android:fontFamily="@font/gotham"
                 android:text=""
                 android:id="@+id/diemden"
-                android:textAlignment="center"
-                android:textSize="18sp" />
+                android:textAlignment="center"/>
 
         </LinearLayout>
 
@@ -79,7 +79,7 @@
             android:fontFamily="@font/print_clearly"
             android:text="12th - Feb - 2019 | Tuesday"
             android:textAlignment="center"
-            android:textColor="#FFFFFF"
+            android:textColor="@color/white"
             android:textSize="18sp" />
 
 
