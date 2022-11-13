@@ -53,16 +53,45 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:id="@+id/chuyenxeGia"
+            android:textColor="#DFDF09"
+            android:textSize="20sp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content">
+
+        </TextView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
         <ImageButton
             android:id="@+id/btnedit"
             android:layout_width="24dp"
             android:layout_height="24dp"
+            android:layout_weight="1"
             android:src="@drawable/ic_baseline_edit_24"></ImageButton>
+
         <ImageButton
             android:id="@+id/btndelete"
             android:layout_width="24dp"
             android:layout_height="24dp"
+            android:layout_weight="1"
             android:src="@drawable/ic_baseline_delete_24"></ImageButton>
+
+        <Button
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:id="@+id/btndatxe"
+            android:layout_weight="1"
+            android:text="Đặt xe">
+
+        </Button>
 
     </LinearLayout>
 

@@ -8,6 +8,15 @@
     android:padding="16dp">
 
     <EditText
+        android:id="@+id/aa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="16dp">
+
+    </EditText>
+
+    <EditText
         android:id="@+id/edtdiemdi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -42,14 +51,13 @@
         android:id="@+id/edtgio"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="188dp"
+        android:layout_marginTop="176dp"
         android:ems="10"
+        android:hint="Giờ"
+        android:inputType="textPersonName"
         android:textColor="#E31717"
         android:textColorHint="#E31515"
-        android:inputType="textPersonName"
-        android:hint="Giờ"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -57,14 +65,14 @@
         android:id="@+id/edtsoxe"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="256dp"
+        android:layout_marginTop="236dp"
         android:ems="10"
+        android:hint="số xe"
+        android:inputType="textPersonName"
         android:textColor="#E31717"
         android:textColorHint="#E31515"
-        android:inputType="textPersonName"
-        android:hint="số xe"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.218"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -99,6 +107,21 @@
         android:layout_marginTop="396dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edtgia"
+        android:layout_width="377dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="296dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:hint="giá vé"
+        android:textColor="#E31717"
+        android:textColorHint="#E31515"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

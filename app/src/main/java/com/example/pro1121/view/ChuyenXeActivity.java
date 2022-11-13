@@ -4,8 +4,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -29,7 +32,7 @@ import java.util.Map;
 
 public class ChuyenXeActivity extends AppCompatActivity implements IAdapterClickEvent {
     FirebaseFirestore db = FirebaseFirestore.getInstance();
-    private EditText edtdiemdi,edtdiemden,edtgio,edtsoxe;
+    private EditText edtdiemdi,edtdiemden,edtgio,edtsoxe,edtgia;
     private ChuyenXE chuyenXE=null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +42,7 @@ public class ChuyenXeActivity extends AppCompatActivity implements IAdapterClick
         edtdiemden=findViewById(R.id.edtdiemden);
         edtgio=findViewById(R.id.edtgio);
         edtsoxe=findViewById(R.id.edtsoxe);
+        edtgia=findViewById(R.id.edtgia);
 
 
 
@@ -55,12 +59,14 @@ public class ChuyenXeActivity extends AppCompatActivity implements IAdapterClick
         String diemden=edtdiemden.getText().toString();
         String gio=edtgio.getText().toString();
         String soxe=edtsoxe.getText().toString();
+        String gia=edtgia.getText().toString();
         // Create a new user with a first and last name
         Map<String, Object> item = new HashMap<>();
         item.put("diemdi", diemdi);
         item.put("diemden", diemden);
         item.put("gio", gio);
         item.put("soxe", soxe);
+        item.put("gia",gia);
 
         if(chuyenXE==null)
         {
@@ -114,6 +120,7 @@ public class ChuyenXeActivity extends AppCompatActivity implements IAdapterClick
         edtdiemden.setText(null);
         edtgio.setText(null);
         edtsoxe.setText(null);
+        edtgia.setText(null);
     }
     private  void getData()
     {
@@ -130,12 +137,23 @@ public class ChuyenXeActivity extends AppCompatActivity implements IAdapterClick
                                 String diemden=map.get("diemden").toString();
                                 String gio=map.get("gio").toString();
                                 String soxe=map.get("soxe").toString();
+                                String gia=map.get("gia").toString();
 
-                                ChuyenXE chuyenXE= new ChuyenXE(-1,diemdi,diemden,gio,soxe);
+                                ChuyenXE chuyenXE= new ChuyenXE(-1,diemdi,diemden,gio,soxe,gia);
                                 chuyenXE.setIdchuyenxe(document.getId());
                                 list.add(chuyenXE);
+//                                for (int i=0;i<list.size();i++)
+//                                {
+//                                    EditText aa=findViewById(R.id.aa);
+//                                    aa.setText(list.get(i).getDiemdi());
+//
+//
+//                                }
+
 
                             }
+
+
                             getSupportFragmentManager().beginTransaction()
                                     .replace(R.id.flChuyenxe, ChuyenXeFragment.newInstance(list)).commit();
                         }
@@ -150,7 +168,9 @@ public class ChuyenXeActivity extends AppCompatActivity implements IAdapterClick
         edtdiemden.setText(chuyenxe.getDiemden());
         edtgio.setText(chuyenxe.getGio());
         edtsoxe.setText(chuyenxe.getSoxe());
+        edtgia.setText(chuyenxe.getGia());
         chuyenXE=chuyenxe;
+
     }
 
     @Override
@@ -185,4 +205,11 @@ public class ChuyenXeActivity extends AppCompatActivity implements IAdapterClick
                 .show();
 
     }
+
+    @Override
+    public void onDatXeClick() {
+
+    }
+
+
 }

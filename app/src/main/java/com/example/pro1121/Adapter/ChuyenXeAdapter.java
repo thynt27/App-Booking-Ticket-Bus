@@ -1,8 +1,11 @@
 package com.example.pro1121.Adapter;
 
+import android.content.Context;
+import android.content.Intent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -10,13 +13,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.pro1121.R;
 import com.example.pro1121.mode.ChuyenXE;
+import com.example.pro1121.view.DatXeActivity;
 
 import java.util.ArrayList;
 
 public class ChuyenXeAdapter extends BaseAdapter {
     private ArrayList<ChuyenXE> list;
+    private Context context;
 
     public ChuyenXeAdapter(ArrayList<ChuyenXE> list) {
+
         this.list = list;
     }
 
@@ -44,9 +50,11 @@ public class ChuyenXeAdapter extends BaseAdapter {
             TextView chuyenxeDiemden = view.findViewById(R.id.chuyenxeDiemden);
             TextView chuyenxeGio = view.findViewById(R.id.chuyenxeGio);
             TextView chuyenxeSoxe = view.findViewById(R.id.chuyenxeSoxe);
+            TextView chuyenxeGia = view.findViewById(R.id.chuyenxeGia);
+            Button btndatxe=view.findViewById(R.id.btndatxe);
             ImageButton btnedit = view.findViewById(R.id.btnedit);
             ImageButton btndelete = view.findViewById(R.id.btndelete);
-            ViewHolder holder = new ViewHolder(chuyenxeDiemdi, chuyenxeDiemden, chuyenxeGio, chuyenxeSoxe, btnedit, btndelete);
+            ViewHolder holder = new ViewHolder(chuyenxeDiemdi, chuyenxeDiemden, chuyenxeGio, chuyenxeSoxe,chuyenxeGia, btnedit, btndelete,btndatxe);
             view.setTag(holder);
         }
         ChuyenXE chuyenXE = (ChuyenXE) getItem(_i);
@@ -55,6 +63,18 @@ public class ChuyenXeAdapter extends BaseAdapter {
         holder.chuyenxeDiemden.setText((chuyenXE.getDiemden()));
         holder.chuyenxeGio.setText((chuyenXE.getGio()));
         holder.chuyenxeSoxe.setText((chuyenXE.getSoxe()));
+        holder.chuyenxeGia.setText(chuyenXE.getGia());
+        holder.btndatxe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                IAdapterClickEvent iAdapterClickEvent = (IAdapterClickEvent) _viewGroup.getContext();
+                iAdapterClickEvent.onDatXeClick();
+
+
+
+            }
+        });
+
         holder.btnedit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -73,16 +93,19 @@ public class ChuyenXeAdapter extends BaseAdapter {
         return view;
     }
     private static class ViewHolder{
-        final TextView chuyenxeDiemdi,chuyenxeDiemden,chuyenxeGio,chuyenxeSoxe;
+        final TextView chuyenxeDiemdi,chuyenxeDiemden,chuyenxeGio,chuyenxeSoxe,chuyenxeGia;
         final ImageButton btnedit,btndelete;
+        final Button btndatxe;
 
-        public ViewHolder(TextView chuyenxeDiemdi, TextView chuyenxeDiemden, TextView chuyenxeGio, TextView chuyenxeSoxe,ImageButton btnedit,ImageButton btndelete) {
+        public ViewHolder(TextView chuyenxeDiemdi, TextView chuyenxeDiemden, TextView chuyenxeGio, TextView chuyenxeSoxe,TextView chuyenxeGia,ImageButton btnedit,ImageButton btndelete,Button btndatxe) {
             this.chuyenxeDiemdi = chuyenxeDiemdi;
             this.chuyenxeDiemden = chuyenxeDiemden;
             this.chuyenxeGio = chuyenxeGio;
             this.chuyenxeSoxe = chuyenxeSoxe;
+            this.chuyenxeGia=chuyenxeGia;
             this.btnedit = btnedit;
             this.btndelete = btndelete;
+            this.btndatxe=btndatxe;
         }
     }
 

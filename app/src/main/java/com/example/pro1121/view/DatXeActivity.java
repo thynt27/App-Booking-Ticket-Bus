@@ -14,7 +14,7 @@ public class DatXeActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_timchuyen);
+        setContentView(R.layout.layout_choose_seat);
 
     }
 }

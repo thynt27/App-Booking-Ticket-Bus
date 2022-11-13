@@ -4,18 +4,27 @@ import java.io.Serializable;
 
 public class ChuyenXE implements Serializable {
     int id;
-    String idchuyenxe,diemden,diemdi,gio,soxe;
+    String idchuyenxe,diemden,diemdi,gio,soxe, gia;
 
 
     public ChuyenXE() {
     }
 
-    public ChuyenXE(int id, String diemden, String diemdi, String gio, String soxe) {
+    public ChuyenXE(int id, String diemdi, String diemden, String gio, String soxe, String gia) {
         this.id = id;
-        this.diemden = diemden;
         this.diemdi = diemdi;
+        this.diemden = diemden;
         this.gio = gio;
         this.soxe = soxe;
+        this.gia=gia;
+    }
+
+    public String getGia() {
+        return gia;
+    }
+
+    public void setGia(String gia) {
+        this.gia = gia;
     }
 
     public int getId() {
