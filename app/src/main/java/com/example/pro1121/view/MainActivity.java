@@ -22,6 +22,7 @@ import com.example.pro1121.Fragment.DatVeFragment;
 import com.example.pro1121.Fragment.NguoiDungFragment;
 import com.example.pro1121.Fragment.TinTucFragment;
 import com.example.pro1121.Fragment.TramXeFragment;
+import com.example.pro1121.Fragment.TrangChuFragment;
 import com.example.pro1121.Fragment.VeXeFragment;
 import com.example.pro1121.R;
 import com.facebook.login.Login;
@@ -66,6 +67,9 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 Fragment fragment = null;
                 switch (item.getItemId()) {
+                    case R.id.mTrangChu:
+                        fragment = new TrangChuFragment();
+                        break;
                     case R.id.mDatVe:
                         fragment = new DatVeFragment();
                         break;
@@ -101,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
 
                     default:
-                        fragment = new DatVeFragment();
+                        fragment = new TrangChuFragment();
                 }
                 if (fragment != null){
                     FragmentManager fragmentManager = getSupportFragmentManager();
