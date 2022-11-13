@@ -106,6 +106,7 @@ public class MainActivity extends AppCompatActivity {
 
                     default:
                         fragment = new TrangChuFragment();
+                        break;
                 }
                 if (fragment != null){
                     FragmentManager fragmentManager = getSupportFragmentManager();
