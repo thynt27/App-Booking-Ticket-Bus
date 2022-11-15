@@ -14,6 +14,7 @@
         android:textStyle="bold" />
 
     <ImageView
+        android:id="@+id/imgSearchBusinMain"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginLeft="60dp"
@@ -66,7 +67,7 @@
         android:textStyle="bold" />
 
     <ImageView
-        android:id="@+id/imgBockBusinMain"
+        android:id="@+id/imgMapBusinMain"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginLeft="240dp"
@@ -74,7 +75,7 @@
         android:src="@drawable/mapbus" />
 
     <ImageView
-        android:id="@+id/imgMapBusinMain"
+        android:id="@+id/imgHistoryBusinMain"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginLeft="60dp"
