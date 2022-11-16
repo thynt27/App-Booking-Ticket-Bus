@@ -13,6 +13,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.pro1121.Adapter.ChuyenXeAdapter;
+import com.example.pro1121.Adapter.IAdapterClickEvent;
 import com.example.pro1121.R;
 import com.example.pro1121.mode.ChuyenXE;
 import com.example.pro1121.view.ChuyenXeActivity;
@@ -24,7 +25,7 @@ import java.util.ArrayList;
  * Use the {@link ChuyenXeFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class ChuyenXeFragment extends Fragment {
+public class ChuyenXeFragment extends Fragment  {
 
 
     private ArrayList<ChuyenXE> chuyenxes;

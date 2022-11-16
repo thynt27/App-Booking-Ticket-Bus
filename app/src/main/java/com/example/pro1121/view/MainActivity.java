@@ -20,6 +20,7 @@ import androidx.fragment.app.FragmentManager;
 
 import com.example.pro1121.Fragment.DatVeFragment;
 import com.example.pro1121.Fragment.NguoiDungFragment;
+import com.example.pro1121.Fragment.TimChuyenFragment;
 import com.example.pro1121.Fragment.TinTucFragment;
 import com.example.pro1121.Fragment.TramXeFragment;
 import com.example.pro1121.Fragment.TrangChuFragment;
@@ -71,7 +72,8 @@ public class MainActivity extends AppCompatActivity {
                         fragment = new TrangChuFragment();
                         break;
                     case R.id.mDatVe:
-                        fragment = new DatVeFragment();
+                        fragment = new TimChuyenFragment();
+
                         break;
                     case R.id.mThongTinTramXe:
                         fragment = new TramXeFragment();
@@ -103,6 +105,7 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.mThongTinNguoiDung:
                         fragment = new NguoiDungFragment();
                         break;
+
 
                     default:
                         fragment = new TrangChuFragment();
