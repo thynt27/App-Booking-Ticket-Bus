@@ -18,7 +18,7 @@ public class PageAdapter extends FragmentStatePagerAdapter {
     public Fragment getItem(int position) {
         switch (position){
             case 0:
-                return new Load1Fragment();
+                return new Load0Fragment();
 
             case 1:
                 return new Load2Fragment();
