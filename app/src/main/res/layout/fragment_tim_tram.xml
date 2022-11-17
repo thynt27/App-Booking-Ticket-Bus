@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragment.TimChuyenFragment">
+    tools:context=".Fragment.TimChuyenFragment"
+    android:background="@color/black">
 
 
     <LinearLayout
@@ -13,14 +14,17 @@
 
         <ImageView
             android:layout_width="match_parent"
-            android:layout_height="6dp"
+            android:layout_height="55dp"
             android:layout_weight="1"
             android:src="@drawable/busstation" />
+
         <FrameLayout
+            android:layout_margin="20dp"
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:id="@+id/frltimtram"
-            android:layout_height="wrap_content">
+            android:layout_height="150dp"
+            >
 
         </FrameLayout>
 

@@ -67,7 +67,7 @@ public class TramXeFragment extends Fragment  {
         super.onViewCreated(view, savedInstanceState);
         lvFrgTramXe=view.findViewById(R.id.lvFrgChuyenXe);
 
-        TramXeAdapter adapter = new TramXeAdapter(tramXes);
+        TramXeAdapter adapter = new TramXeAdapter(tramXes,getContext());
         lvFrgTramXe.setAdapter(adapter);
         lvFrgTramXe.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override

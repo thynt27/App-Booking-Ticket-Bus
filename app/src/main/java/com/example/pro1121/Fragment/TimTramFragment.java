@@ -78,14 +78,13 @@ public class TimTramFragment extends Fragment {
     }
     private void getData()
     {
-        ArrayList<TramXe> list= new ArrayList<>();
         db.collection("tramxe")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
-
+                            ArrayList<TramXe> list= new ArrayList<>();
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 Map<String, Object> map = document.getData();
                                 String tenTram = map.get("tenTram").toString();
@@ -97,11 +96,9 @@ public class TimTramFragment extends Fragment {
                                 list.add(tramXe);
 
                             }
-
+                            getActivity().getSupportFragmentManager().beginTransaction()
+                                    .replace(R.id.frltimtram, TramXeFragment.newInstance(list)).commit();
                         }
-                        getActivity().getSupportFragmentManager().beginTransaction()
-                                .replace(R.id.frltimtram, TramXeFragment.newInstance(list)).commit();
-
                     }
 
 
