@@ -21,13 +21,16 @@ public class PageAdapter extends FragmentStatePagerAdapter {
                 return new Load0Fragment();
 
             case 1:
-                return new Load2Fragment();
+                return new Load1Fragment();
 
             case 2:
+                return new Load2Fragment();
+
+            case 3:
                 return new Load3Fragment();
 
             default:
-                return new Load1Fragment();
+                return new Load0Fragment();
         }
     }
 

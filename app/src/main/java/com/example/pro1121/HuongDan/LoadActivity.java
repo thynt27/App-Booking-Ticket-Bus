@@ -45,7 +45,7 @@ public class LoadActivity extends AppCompatActivity {
 
             @Override
             public void onPageSelected(int position) {
-                if (position == 2){
+                if (position == 3){
                     tvSkip.setVisibility(View.GONE);
                     bottom.setVisibility(View.GONE);
                 }else {
@@ -63,14 +63,14 @@ public class LoadActivity extends AppCompatActivity {
         tvSkip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                vp.setCurrentItem(2);
+                vp.setCurrentItem(3);
             }
         });
 
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (vp.getCurrentItem() < 2){
+                if (vp.getCurrentItem() < 3){
                     vp.setCurrentItem(vp.getCurrentItem()+1);
                 }
             }
