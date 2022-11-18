@@ -23,7 +23,8 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="16dp"
-            android:fontFamily="@font/print_clearly"
+            android:textStyle="bold"
+            android:textColor="@color/white"
             android:text="Select your bus!"
             android:textAlignment="center" />
 
@@ -44,6 +45,7 @@
                 android:textAlignment="center"
                 android:fontFamily="@font/gotham"
                 android:id="@+id/diemdi"
+                android:textColor="@color/white"
                 android:text="">
 
             </EditText>
@@ -65,6 +67,7 @@
                 android:fontFamily="@font/gotham"
                 android:text=""
                 android:id="@+id/diemden"
+                android:textColor="@color/white"
                 android:textAlignment="center"/>
 
         </LinearLayout>
@@ -76,7 +79,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/linearLayout"
             android:layout_marginTop="8dp"
-            android:fontFamily="@font/print_clearly"
+            android:textStyle="bold"
             android:text="12th - Feb - 2019 | Tuesday"
             android:textAlignment="center"
             android:textColor="@color/white"

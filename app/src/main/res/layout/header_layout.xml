@@ -2,22 +2,42 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="200dp"
-    android:background="#C53465"
-    android:gravity="center"
-    android:orientation="vertical">
+    android:background="#2979FF"
+    android:orientation="horizontal">
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/img_avatar"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:src="@drawable/img_user" />
+        android:layout_marginTop="50dp"
+        android:src="@drawable/img_user"
+        android:layout_marginLeft="20dp"/>
 
-    <TextView
-        android:id="@+id/txtTen"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="#fff"
-        android:textSize="22sp"
+        android:orientation="vertical"
+        android:layout_marginTop="65dp"
+        android:layout_marginLeft="10dp">
 
-        />
+        <TextView
+            android:id="@+id/txtTen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#fff"
+            android:textSize="20dp"
+            />
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:id="@+id/txtEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#fff"
+            android:textSize="17dp"
+            />
+
+    </LinearLayout>
+
 
 </LinearLayout>
