@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.pro1121.R;
+import com.example.pro1121.news.TinTucActivity;
 import com.example.pro1121.view.TimChuyenActivity;
 
 public class TrangChuFragment extends Fragment {
@@ -35,9 +36,6 @@ public class TrangChuFragment extends Fragment {
         imgSearchBusinMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getActivity(), TimChuyenActivity.class);
-                startActivity(i);
-                Toast.makeText(getContext() , "dadadasdadada", Toast.LENGTH_SHORT).show();
             }
         });
 
