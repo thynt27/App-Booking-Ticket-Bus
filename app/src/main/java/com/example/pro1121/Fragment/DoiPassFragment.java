@@ -49,6 +49,7 @@ public class DoiPassFragment extends Fragment {
 
     private void onClickChangePassword(){
         String newPassword = edtNewPass1.getText().toString().trim();
+        progressDialog.setTitle("Cập nhật mật khẩu...");
         progressDialog.show();
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();

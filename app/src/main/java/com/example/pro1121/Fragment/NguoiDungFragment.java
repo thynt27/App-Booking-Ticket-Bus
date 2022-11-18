@@ -128,6 +128,7 @@ public class NguoiDungFragment extends Fragment {
         if (user == null){
             return;
         }
+        progressDialog.setTitle("Update Profile...");
         progressDialog.show();
         String strFullName = edtNameinProFile.getText().toString().trim();
 
@@ -154,6 +155,7 @@ public class NguoiDungFragment extends Fragment {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
         String newEmail = edtEmailinProFile.getText().toString().trim();
+        progressDialog.setTitle("Chỉnh sửa Email...");
         progressDialog.show();
         user.updateEmail(newEmail)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
