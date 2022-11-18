@@ -31,6 +31,7 @@ import com.bumptech.glide.Glide;
 import com.example.pro1121.Fragment.DoiPassFragment;
 import com.example.pro1121.Fragment.NguoiDungFragment;
 import com.example.pro1121.Fragment.TimChuyenFragment;
+import com.example.pro1121.Fragment.TimTramFragment;
 import com.example.pro1121.Fragment.TinTucFragment;
 import com.example.pro1121.Fragment.TramXeFragment;
 import com.example.pro1121.Fragment.TrangChuFragment;
@@ -118,7 +119,7 @@ public class MainActivity extends AppCompatActivity {
 
                         break;
                     case R.id.mThongTinTramXe:
-                        fragment = new TramXeFragment();
+                        fragment = new TimTramFragment();
                         break;
                     case R.id.mThongTinVeXe:
                         fragment = new VeXeFragment();
