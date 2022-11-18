@@ -140,7 +140,6 @@ public class TimChuyenActivity extends AppCompatActivity implements IAdapterClic
 
     @Override
     public void onDatXeClick() {
-        Intent intent= new Intent(getApplicationContext(),DatXeActivity.class);
-        startActivity(intent);
+
     }
 }

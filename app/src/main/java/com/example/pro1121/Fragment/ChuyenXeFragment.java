@@ -30,6 +30,7 @@ public class ChuyenXeFragment extends Fragment  {
 
     private ArrayList<ChuyenXE> chuyenxes;
     private ListView lvFrgChuyenXe;
+    private TimChuyenFragment frg;
 
     public ChuyenXeFragment() {
         // Required empty public constructor
