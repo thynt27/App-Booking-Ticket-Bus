@@ -10,13 +10,12 @@
         android:id="@+id/cardView"
         android:layout_width="375dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="132dp"
+        android:layout_marginBottom="96dp"
         android:background="@color/white"
         android:orientation="vertical"
         app:cardCornerRadius="15dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
@@ -29,47 +28,35 @@
             android:orientation="vertical">
 
             <EditText
-                android:id="@+id/edtOldPass"
+                android:id="@+id/edtFeedBackEmail"
                 android:layout_width="match_parent"
-                android:layout_height="45dp"
+                android:layout_height="40dp"
                 android:layout_marginTop="5dp"
                 android:background="@drawable/edtlogin"
-                android:drawableLeft="@drawable/ic_people"
-                android:hint="Nhập mật khẩu cũ"
-                android:paddingLeft="5dp"
-                android:textSize="20dp" />
-
-            <EditText
-                android:id="@+id/edtNewPass1"
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:layout_marginTop="15dp"
-                android:background="@drawable/edtlogin"
-                android:drawableLeft="@drawable/ic_people"
-                android:hint="Nhập mật khẩu mới"
-                android:paddingLeft="5dp"
-                android:textSize="20dp" />
-
-            <EditText
-                android:id="@+id/edtNewPass2"
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:layout_marginTop="15dp"
-                android:background="@drawable/edtlogin"
                 android:drawableLeft="@drawable/ic_email"
-                android:hint="Nhập lại mật khẩu mới"
+                android:hint=" Email :"
+                android:paddingLeft="5dp"
+                android:textSize="20dp" />
+
+            <EditText
+                android:id="@+id/edtFeedBack"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="15dp"
+                android:background="@drawable/edtlogin"
+                android:hint="                       FeedBack"
                 android:paddingLeft="5dp"
                 android:textSize="20dp" />
 
             <Button
-                android:id="@+id/btnUpdatePass"
+                android:id="@+id/btnFeedBack"
                 android:layout_width="200dp"
                 android:layout_height="40dp"
                 android:layout_marginLeft="65dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginBottom="5dp"
                 android:background="@drawable/btn"
-                android:text="Change PassWord" />
+                android:text="Gửi đánh giá" />
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
@@ -84,5 +71,16 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.077"
         app:srcCompat="@drawable/buslogo" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="15dp"
+        android:textColor="@color/black"
+        android:text="Mọi thắc mắc hay có sự cố trong quá trình sử dụng, xin mọi người vui lòng gửi phiếu đánh giá về cho chúng tôi. Thank !"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

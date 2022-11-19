@@ -29,6 +29,7 @@ import androidx.fragment.app.FragmentManager;
 
 import com.bumptech.glide.Glide;
 import com.example.pro1121.Fragment.DoiPassFragment;
+import com.example.pro1121.Fragment.FeedBackFragment;
 import com.example.pro1121.Fragment.NguoiDungFragment;
 import com.example.pro1121.Fragment.TimChuyenFragment;
 import com.example.pro1121.Fragment.TimTramFragment;
@@ -147,6 +148,10 @@ public class MainActivity extends AppCompatActivity {
 
                     case R.id.mThongTinNguoiDung:
                         fragment = mNguoiDungFragment;
+                        break;
+
+                    case R.id.mFeedBack:
+                        fragment = new FeedBackFragment();
                         break;
 
                     case R.id.mDoiPass:
