@@ -1,5 +1,6 @@
 package com.example.pro1121.view;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -49,13 +50,14 @@ public class LoginActivity extends AppCompatActivity {
     private CallbackManager mCallbackManager;
     private EditText edtEmail, edtPass;
     private Button btnLogin;
-    private TextView tvSignUp;
+    private TextView tvSignUp,txtForgotPassword;
     private FirebaseAuth firebaseAuth;
     private static final String TAG = "FacebookAuthentication";
     private SignInButton btnGG;
     private GoogleSignInClient mGoogleSignInClient;
     private String TAG1 = "GoogleLogIN";
     private int RC_SIGN_IN = 9001;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,6 +70,7 @@ public class LoginActivity extends AppCompatActivity {
         edtPass = findViewById(R.id.edtPass);
         btnLogin = findViewById(R.id.btnLogin);
         tvSignUp = findViewById(R.id.tvSignUp);
+        txtForgotPassword = findViewById(R.id.txtForgotPassword);
         btnGG = findViewById(R.id.btnGG);
 
         //Firebase
@@ -134,6 +137,15 @@ public class LoginActivity extends AppCompatActivity {
                 signIn();
             }
         });
+
+        // forgot password
+        txtForgotPassword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onClickForPassword();
+            }
+        });
+
     }
 
     private void signIn(){
@@ -264,6 +276,24 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    private void onClickForPassword(){
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        String emailAddress = user.getEmail();
+
+        auth.sendPasswordResetEmail(emailAddress)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        if (task.isSuccessful()) {
+                            Toast.makeText(LoginActivity.this, "Đã gửi mã xác thực vào Email !!!", Toast.LENGTH_SHORT).show();
+                        }else {
+                            Toast.makeText(LoginActivity.this, "Gửi mã xác thực thất bại !!!", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
     }
 
 }

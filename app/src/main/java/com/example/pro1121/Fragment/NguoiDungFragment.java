@@ -37,7 +37,7 @@ public class NguoiDungFragment extends Fragment {
 
     private ImageView imgAvatarinProFile;
     private EditText edtNameinProFile, edtEmailinProFile;
-    private Button btnProFile;
+    private Button btnProFileUpdate, btnProFileEditEmail;
     private Uri mUri;
     private MainActivity mMainActivity;
     private ProgressDialog progressDialog;
@@ -50,10 +50,8 @@ public class NguoiDungFragment extends Fragment {
         imgAvatarinProFile = view.findViewById(R.id.imgAvatarinProFile);
         edtNameinProFile = view.findViewById(R.id.edtNameinProFile);
         edtEmailinProFile = view.findViewById(R.id.edtEmailinProFile);
-//        edtAgeinProFile = view.findViewById(R.id.edtAgeinProFile);
-//        edtPhoneinProFile = view.findViewById(R.id.edtPhoneinProFile);
-//        edtAddressinProFile = view.findViewById(R.id.edtAddressinProFile);
-        btnProFile = view.findViewById(R.id.btnProFile);
+        btnProFileUpdate = view.findViewById(R.id.btnProFileUpdate);
+        btnProFileEditEmail = view.findViewById(R.id.btnProFileEditEmail);
 
         mMainActivity = (MainActivity) getActivity();
         progressDialog =  new ProgressDialog(getActivity());
@@ -84,10 +82,17 @@ public class NguoiDungFragment extends Fragment {
             }
         });
 
-        btnProFile.setOnClickListener(new View.OnClickListener() {
+        btnProFileUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 onClickUpdateProFile();
+            }
+        });
+
+        btnProFileEditEmail.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onClickEditEmail();
             }
         });
     }
@@ -123,6 +128,7 @@ public class NguoiDungFragment extends Fragment {
         if (user == null){
             return;
         }
+        progressDialog.setTitle("Update Profile...");
         progressDialog.show();
         String strFullName = edtNameinProFile.getText().toString().trim();
 
@@ -143,6 +149,27 @@ public class NguoiDungFragment extends Fragment {
                     }
                 });
 
+    }
+
+    private void onClickEditEmail(){
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+
+        String newEmail = edtEmailinProFile.getText().toString().trim();
+        progressDialog.setTitle("Chỉnh sửa Email...");
+        progressDialog.show();
+        user.updateEmail(newEmail)
+                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                    @Override
+                    public void onComplete(@NonNull Task<Void> task) {
+                        progressDialog.dismiss();
+                        if (task.isSuccessful()) {
+                            Toast.makeText(mMainActivity, "Chỉnh sửa Email thành công !!!", Toast.LENGTH_SHORT).show();
+                            mMainActivity.showProfile();
+                        }else{
+                            Toast.makeText(mMainActivity, "Chỉnh sửa Email thất bại !!!", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
     }
 
 }

@@ -11,6 +11,9 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.pro1121.Fragment.ChuyenXeFragment;
+import com.example.pro1121.Fragment.TimChuyenFragment;
+import com.example.pro1121.Fragment.TinTucFragment;
 import com.example.pro1121.R;
 import com.example.pro1121.mode.ChuyenXE;
 import com.example.pro1121.view.DatXeActivity;
@@ -19,11 +22,14 @@ import java.util.ArrayList;
 
 public class ChuyenXeAdapter extends BaseAdapter {
     private ArrayList<ChuyenXE> list;
+
     private Context context;
 
-    public ChuyenXeAdapter(ArrayList<ChuyenXE> list) {
+    public ChuyenXeAdapter(ArrayList<ChuyenXE> list,Context context) {
 
         this.list = list;
+        this.context=context;
+
     }
 
     @Override
@@ -67,10 +73,9 @@ public class ChuyenXeAdapter extends BaseAdapter {
         holder.btndatxe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                IAdapterClickEvent iAdapterClickEvent = (IAdapterClickEvent) _viewGroup.getContext();
-                iAdapterClickEvent.onDatXeClick();
 
-
+            Intent intent= new Intent(context, DatXeActivity.class);
+            context.startActivity(intent);
 
             }
         });

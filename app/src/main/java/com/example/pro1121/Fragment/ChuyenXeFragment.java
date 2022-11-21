@@ -30,6 +30,7 @@ public class ChuyenXeFragment extends Fragment  {
 
     private ArrayList<ChuyenXE> chuyenxes;
     private ListView lvFrgChuyenXe;
+    private TimChuyenFragment frg;
 
     public ChuyenXeFragment() {
         // Required empty public constructor
@@ -67,7 +68,7 @@ public class ChuyenXeFragment extends Fragment  {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         lvFrgChuyenXe=view.findViewById(R.id.lvFrgChuyenXe);
-        ChuyenXeAdapter adapter=new ChuyenXeAdapter(chuyenxes);
+        ChuyenXeAdapter adapter=new ChuyenXeAdapter(chuyenxes,getContext());
         lvFrgChuyenXe.setAdapter(adapter);
         lvFrgChuyenXe.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override

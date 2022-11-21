@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.example.pro1121.R;
+import com.google.firebase.FirebaseApp;
 
 public class HistoryActivity extends AppCompatActivity {
 
