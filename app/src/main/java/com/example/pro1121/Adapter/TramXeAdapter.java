@@ -91,7 +91,6 @@ public class TramXeAdapter extends BaseAdapter {
             this.viTri= viTri;
             this.btnedit = btnedit;
 
-
         }
     }
 
