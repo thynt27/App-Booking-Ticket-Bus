@@ -45,7 +45,6 @@ public class TramXeAdapter extends BaseAdapter {
             view = View.inflate(_viewGroup.getContext(), R.layout.item_recycler_tramxe, null);
             TextView tenTram = view.findViewById(R.id.txtTenTram);
             TextView viTri = view.findViewById(R.id.txtViTri);
-
             ImageButton btnedit = view.findViewById(R.id.ivEdit);
 
             ViewHolder holder = new ViewHolder(tenTram,viTri, btnedit);
@@ -55,7 +54,6 @@ public class TramXeAdapter extends BaseAdapter {
         ViewHolder holder = (ViewHolder) view.getTag();
         holder.tenTram.setText(tramXe.getTenTram());
         holder.viTri.setText(tramXe.getViTri());
-
 
 
 
@@ -88,7 +86,6 @@ public class TramXeAdapter extends BaseAdapter {
             this.tenTram= tenTram;
             this.viTri= viTri;
             this.btnedit = btnedit;
-
 
         }
     }

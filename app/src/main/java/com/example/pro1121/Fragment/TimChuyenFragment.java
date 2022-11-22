@@ -1,5 +1,6 @@
 package com.example.pro1121.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -13,8 +14,14 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
+import com.example.pro1121.Adapter.IAdapterClickEvent;
 import com.example.pro1121.R;
+
 import com.example.pro1121.model.ChuyenXE;
+
+
+import com.example.pro1121.view.DatXeActivity;
+
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -29,7 +36,7 @@ import java.util.Map;
  * Use the {@link TimChuyenFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class TimChuyenFragment extends Fragment {
+public class TimChuyenFragment extends Fragment  {
     private ArrayList<ChuyenXE> chuyenxes;
     EditText diemden1;
     private EditText diemdi1;
@@ -154,4 +161,5 @@ public class TimChuyenFragment extends Fragment {
                 });
 
     }
+
 }

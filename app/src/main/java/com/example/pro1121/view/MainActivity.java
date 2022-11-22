@@ -28,7 +28,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
 import com.bumptech.glide.Glide;
-import com.example.pro1121.Fragment.DatVeFragment;
+import com.example.pro1121.Fragment.DoiPassFragment;
+import com.example.pro1121.Fragment.FeedBackFragment;
 import com.example.pro1121.Fragment.NguoiDungFragment;
 import com.example.pro1121.Fragment.TimChuyenFragment;
 import com.example.pro1121.Fragment.TimTramFragment;
@@ -37,18 +38,13 @@ import com.example.pro1121.Fragment.TramXeFragment;
 import com.example.pro1121.Fragment.TrangChuFragment;
 import com.example.pro1121.Fragment.VeXeFragment;
 import com.example.pro1121.R;
-import com.facebook.gamingservices.FriendFinderDialog;
-import com.facebook.login.Login;
+import com.example.pro1121.news.TinTucActivity;
 import com.facebook.login.LoginManager;
 import com.google.android.gms.auth.api.Auth;
-import com.google.android.gms.auth.api.signin.GoogleSignInApi;
-import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -154,6 +150,13 @@ public class MainActivity extends AppCompatActivity {
                         fragment = mNguoiDungFragment;
                         break;
 
+                    case R.id.mFeedBack:
+                        fragment = new FeedBackFragment();
+                        break;
+
+                    case R.id.mDoiPass:
+                        fragment = new DoiPassFragment();
+                        break;
 
                     default:
                         fragment = new TrangChuFragment();
