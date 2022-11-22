@@ -5,6 +5,8 @@
     android:background="#2979FF"
     android:orientation="horizontal">
 
+
+
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/img_avatar"
         android:layout_width="100dp"
@@ -14,30 +16,36 @@
         android:layout_marginLeft="20dp"/>
 
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="226dp"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="65dp"
-        android:layout_marginLeft="10dp">
+        android:orientation="vertical">
+
 
         <TextView
             android:id="@+id/txtTen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="#fff"
-            android:textSize="20dp"
-            />
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="65dp"
+            android:orientation="vertical"
+            android:text="Hi Nguyen Van Teo!" />
 
         <TextView
-            android:layout_marginTop="5dp"
             android:id="@+id/txtEmail"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="10dp"
+            android:text="xaxa@gmail.com"
             android:textColor="#fff"
-            android:textSize="17dp"
-            />
+            android:textSize="17dp" />
 
     </LinearLayout>
+
+
+
+
+
 
 
 </LinearLayout>

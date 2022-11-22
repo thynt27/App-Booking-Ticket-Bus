@@ -6,13 +6,11 @@ import android.net.Uri;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.pro1121.R;
-import com.example.pro1121.mode.ChuyenXE;
-import com.example.pro1121.mode.TramXe;
+import com.example.pro1121.model.TramXe;
 
 import java.util.ArrayList;
 

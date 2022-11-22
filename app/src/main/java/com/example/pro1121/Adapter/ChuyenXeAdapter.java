@@ -1,7 +1,6 @@
 package com.example.pro1121.Adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -9,11 +8,8 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import androidx.recyclerview.widget.RecyclerView;
-
 import com.example.pro1121.R;
-import com.example.pro1121.mode.ChuyenXE;
-import com.example.pro1121.view.DatXeActivity;
+import com.example.pro1121.model.ChuyenXE;
 
 import java.util.ArrayList;
 

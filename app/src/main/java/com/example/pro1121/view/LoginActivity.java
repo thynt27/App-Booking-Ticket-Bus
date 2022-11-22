@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -49,13 +50,15 @@ public class LoginActivity extends AppCompatActivity {
     private CallbackManager mCallbackManager;
     private EditText edtEmail, edtPass;
     private Button btnLogin;
-    private TextView tvSignUp;
+    private TextView tvSignUp, tvForgot;
+    private CheckBox checkRemember;
     private FirebaseAuth firebaseAuth;
     private static final String TAG = "FacebookAuthentication";
     private SignInButton btnGG;
     private GoogleSignInClient mGoogleSignInClient;
     private String TAG1 = "GoogleLogIN";
     private int RC_SIGN_IN = 9001;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,6 +71,8 @@ public class LoginActivity extends AppCompatActivity {
         edtPass = findViewById(R.id.edtPass);
         btnLogin = findViewById(R.id.btnLogin);
         tvSignUp = findViewById(R.id.tvSignUp);
+        tvForgot = findViewById(R.id.tvForgot);
+        checkRemember = findViewById(R.id.checkRemember);
         btnGG = findViewById(R.id.btnGG);
 
         //Firebase
@@ -90,7 +95,12 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
-
+        tvForgot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(LoginActivity.this, ResetPasswordActivity.class));
+            }
+        });
 
         //Login with Facebook
         // Initialize Facebook Login button
@@ -234,6 +244,7 @@ public class LoginActivity extends AppCompatActivity {
             Toast.makeText(this, "Vui lòng nhập Username", Toast.LENGTH_SHORT).show();
             return;
         }
+
         if (!Patterns.EMAIL_ADDRESS.matcher(mail).matches()){
             edtEmail.setError("Vui lòng nhập email hợp lệ");
             edtEmail.requestFocus();
@@ -245,8 +256,8 @@ public class LoginActivity extends AppCompatActivity {
             return;
         }
         if (pass.length() < 6){
-            edtEmail.setError("Mật khẩu phải từ 6 kí tự");
-            edtEmail.requestFocus();
+            edtPass.setError("Mật khẩu phải từ 6 kí tự");
+            edtPass.requestFocus();
             return;
         }
 
@@ -259,11 +270,13 @@ public class LoginActivity extends AppCompatActivity {
                  Intent i = new Intent(LoginActivity.this, LoadActivity.class);
                  startActivity(i);
              }else{
-                 Toast.makeText(LoginActivity.this, "Đăng nhập không thành công!", Toast.LENGTH_SHORT).show();
+                 Toast.makeText(LoginActivity.this, "Đăng nhập không thành công!\n Vui lòng kiểm tra lại Email hoặc Password!", Toast.LENGTH_SHORT).show();
              }
 
             }
         });
     }
+    //Check remember me
+
 
 }
