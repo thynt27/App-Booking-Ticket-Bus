@@ -102,8 +102,8 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         ActionBar bar = getSupportActionBar();
         bar.setDisplayHomeAsUpEnabled(true);
-
         bar.setHomeAsUpIndicator(R.drawable.ic_menu);
+
 
         showProfile();
 

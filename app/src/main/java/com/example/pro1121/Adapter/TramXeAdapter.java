@@ -6,13 +6,11 @@ import android.net.Uri;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.pro1121.R;
-import com.example.pro1121.mode.ChuyenXE;
-import com.example.pro1121.mode.TramXe;
+import com.example.pro1121.model.TramXe;
 
 import java.util.ArrayList;
 
@@ -47,7 +45,6 @@ public class TramXeAdapter extends BaseAdapter {
             view = View.inflate(_viewGroup.getContext(), R.layout.item_recycler_tramxe, null);
             TextView tenTram = view.findViewById(R.id.txtTenTram);
             TextView viTri = view.findViewById(R.id.txtViTri);
-
             ImageButton btnedit = view.findViewById(R.id.ivEdit);
 
             ViewHolder holder = new ViewHolder(tenTram,viTri, btnedit);
@@ -57,7 +54,6 @@ public class TramXeAdapter extends BaseAdapter {
         ViewHolder holder = (ViewHolder) view.getTag();
         holder.tenTram.setText(tramXe.getTenTram());
         holder.viTri.setText(tramXe.getViTri());
-
 
 
 

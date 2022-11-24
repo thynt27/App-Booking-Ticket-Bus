@@ -55,47 +55,54 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:hint="👤 Firstname" />
+                android:drawableLeft="@drawable/ic_person"
+                android:hint=" Fullname" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:hint="👤 Lastname" />
+                android:drawableLeft="@drawable/ic_person"
+                android:hint=" Age" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:hint="✉️ Email" />
+                android:drawableLeft="@drawable/ic_baseline_phone_android_24"
+                android:hint="️ Phone" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:hint="📱 Phone" />
+                android:drawableLeft="@drawable/ic_email"
+                android:hint=" Email" />
 
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:hint="🎯 Address" />
+                android:drawableLeft="@drawable/ic_lock"
+                android:hint=" Password" />
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/btnEdit"
                 android:layout_marginLeft="20dp"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="🖋 Edit Profile" />
+                android:drawableLeft="@drawable/ic_baseline_edit_24"
+                android:text=" Edit Profile" />
 
             <Button
-                android:id="@+id/button4"
+                android:id="@+id/btnChangePass"
                 android:layout_marginLeft="20dp"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="🔑 Change Password" />
+                android:drawableLeft="@drawable/ic_key"
+                android:text=" Change Password" />
 
         </LinearLayout>
     </androidx.cardview.widget.CardView>
