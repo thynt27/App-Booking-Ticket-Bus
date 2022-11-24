@@ -46,6 +46,7 @@
                     android:layout_weight="45"
                     android:textAlignment="center"
                     android:fontFamily="@font/gotham"
+                    android:textColor="#ffff"
                     android:id="@+id/diemdi"
                     android:text="">
 
@@ -67,6 +68,7 @@
                     android:layout_weight="45"
                     android:fontFamily="@font/gotham"
                     android:text=""
+                    android:textColor="#ffff"
                     android:id="@+id/diemden"
                     android:textAlignment="center"/>
 
