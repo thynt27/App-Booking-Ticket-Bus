@@ -7,8 +7,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -17,7 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.pro1121.Adapter.IAdapterClickEvent;
 import com.example.pro1121.Fragment.ChuyenXeFragment;
 import com.example.pro1121.R;
-import com.example.pro1121.mode.ChuyenXE;
+import com.example.pro1121.model.ChuyenXE;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.firestore.FirebaseFirestore;

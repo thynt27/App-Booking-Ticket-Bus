@@ -1,4 +1,4 @@
-package com.example.pro1121.mode;
+package com.example.pro1121.model;
 
 public class TramXe {
     private  int id;

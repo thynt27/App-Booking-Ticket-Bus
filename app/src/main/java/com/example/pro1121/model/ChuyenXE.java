@@ -1,4 +1,4 @@
-package com.example.pro1121.mode;
+package com.example.pro1121.model;
 
 import java.io.Serializable;
 

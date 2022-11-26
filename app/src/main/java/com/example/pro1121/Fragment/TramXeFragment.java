@@ -11,11 +11,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.example.pro1121.Adapter.ChuyenXeAdapter;
 import com.example.pro1121.Adapter.TramXeAdapter;
 import com.example.pro1121.R;
-import com.example.pro1121.mode.ChuyenXE;
-import com.example.pro1121.mode.TramXe;
+import com.example.pro1121.model.TramXe;
 
 import java.util.ArrayList;
 

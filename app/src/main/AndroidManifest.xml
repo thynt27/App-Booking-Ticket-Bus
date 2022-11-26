@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+
+
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+
+
 
     <application
         android:allowBackup="true"
@@ -29,6 +33,7 @@
         <activity
             android:name=".view.ChuyenXeActivity"
             android:exported="true">
+
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -62,15 +67,9 @@
             android:exported="false" />
         <activity
             android:name=".view.HelloActivity"
-            android:exported="true"
-           >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:exported="true">
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
-
 
         <activity
             android:name=".view.LoginActivity"
@@ -86,13 +85,18 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
+
         <activity
             android:name=".view.RegisterActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar"
             android:exported="false" />
         <activity
             android:name=".view.ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.ResetPasswordActivity"
             android:exported="false" />
         <activity
             android:name=".BookTicket"
