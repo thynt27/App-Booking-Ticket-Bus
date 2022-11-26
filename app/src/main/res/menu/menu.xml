@@ -19,7 +19,7 @@
 
     <item android:id="@+id/mTinTuc"
         android:title="Tin Tức"
-        android:icon="@drawable/ic_news" />
+        android:icon="@drawable/ic_news"/>
 
     <item android:title="Người dùng">
         <menu>
