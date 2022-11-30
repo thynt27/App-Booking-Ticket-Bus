@@ -102,8 +102,8 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         ActionBar bar = getSupportActionBar();
         bar.setDisplayHomeAsUpEnabled(true);
-
         bar.setHomeAsUpIndicator(R.drawable.ic_menu);
+
 
         showProfile();
 
@@ -126,7 +126,8 @@ public class MainActivity extends AppCompatActivity {
                         fragment = new VeXeFragment();
                         break;
                     case R.id.mTinTuc:
-                        fragment = new TinTucFragment();
+                        Intent i = new Intent(MainActivity.this, TinTucActivity.class);
+                        startActivity(i);
                         break;
                     case R.id.mThoat:
                         //Logout google

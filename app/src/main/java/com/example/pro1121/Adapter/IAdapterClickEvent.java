@@ -1,8 +1,6 @@
 package com.example.pro1121.Adapter;
 
-import android.content.Context;
-
-import com.example.pro1121.mode.ChuyenXE;
+import com.example.pro1121.model.ChuyenXE;
 
 public interface IAdapterClickEvent {
     public void onEditChuyenXeClick(ChuyenXE chuyenxe);

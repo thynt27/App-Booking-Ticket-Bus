@@ -13,10 +13,8 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.example.pro1121.Adapter.ChuyenXeAdapter;
-import com.example.pro1121.Adapter.IAdapterClickEvent;
 import com.example.pro1121.R;
-import com.example.pro1121.mode.ChuyenXE;
-import com.example.pro1121.view.ChuyenXeActivity;
+import com.example.pro1121.model.ChuyenXE;
 
 import java.util.ArrayList;
 

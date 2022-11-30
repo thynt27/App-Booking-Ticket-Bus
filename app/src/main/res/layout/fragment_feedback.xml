@@ -10,7 +10,7 @@
         android:id="@+id/cardView"
         android:layout_width="375dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="96dp"
+        android:layout_marginBottom="72dp"
         android:background="@color/white"
         android:orientation="vertical"
         app:cardCornerRadius="15dp"
@@ -39,12 +39,23 @@
                 android:textSize="20dp" />
 
             <EditText
+                android:id="@+id/edtSDT"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edtlogin"
+                android:drawableLeft="@drawable/ic_phone"
+                android:hint=" Số điện thoại :"
+                android:paddingLeft="5dp"
+                android:textSize="20dp" />
+
+            <EditText
                 android:id="@+id/edtFeedBack"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
                 android:layout_marginTop="15dp"
                 android:background="@drawable/edtlogin"
-                android:hint="                       FeedBack"
+                android:hint="                        Phản hồi"
                 android:paddingLeft="5dp"
                 android:textSize="20dp" />
 
@@ -67,19 +78,23 @@
         android:layout_height="200dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.077"
+        app:layout_constraintVertical_bias="0.03"
         app:srcCompat="@drawable/buslogo" />
 
     <TextView
+        android:id="@+id/textView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:gravity="center"
-        android:textSize="15dp"
-        android:textColor="@color/black"
         android:text="Mọi thắc mắc hay có sự cố trong quá trình sử dụng, xin mọi người vui lòng gửi phiếu đánh giá về cho chúng tôi. Thank !"
+        android:textColor="@color/black"
+        android:textSize="15dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 

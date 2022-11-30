@@ -1,5 +1,6 @@
 package com.example.pro1121.Fragment;
 
+
 import static com.example.pro1121.view.MainActivity.MY_REQUEST_CODE;
 
 import android.Manifest;
@@ -17,10 +18,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
 
 import com.bumptech.glide.Glide;
 import com.example.pro1121.R;
@@ -54,7 +61,7 @@ public class NguoiDungFragment extends Fragment {
         btnProFileEditEmail = view.findViewById(R.id.btnProFileEditEmail);
 
         mMainActivity = (MainActivity) getActivity();
-        progressDialog =  new ProgressDialog(getActivity());
+        progressDialog = new ProgressDialog(getActivity());
 
         setProFile();
         clickAvatar();
@@ -63,9 +70,9 @@ public class NguoiDungFragment extends Fragment {
     }
 
     // set Thông tin
-    private void setProFile(){
+    private void setProFile() {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        if (user == null){
+        if (user == null) {
             return;
         }
         edtNameinProFile.setText(user.getDisplayName());
@@ -74,7 +81,7 @@ public class NguoiDungFragment extends Fragment {
         Log.d("<><><><><>TAG", "setProFile: ");
     }
 
-    private void clickAvatar(){
+    private void clickAvatar() {
         imgAvatarinProFile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -97,24 +104,24 @@ public class NguoiDungFragment extends Fragment {
         });
     }
 
-    private void openAlbum(){
-        if (mMainActivity == null){
+    private void openAlbum() {
+        if (mMainActivity == null) {
             return;
         }
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) { // < hon android 6
             mMainActivity.openGallery();
             return;
         }
-        if (getActivity().checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED){
+        if (getActivity().checkSelfPermission(Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED) {
             mMainActivity.openGallery();
-        }else{
-            String [] permission = {Manifest.permission.READ_EXTERNAL_STORAGE};
-            getActivity().requestPermissions(permission,MY_REQUEST_CODE);
+        } else {
+            String[] permission = {Manifest.permission.READ_EXTERNAL_STORAGE};
+            getActivity().requestPermissions(permission, MY_REQUEST_CODE);
 
         }
     }
 
-    public void setBitmapImageView(Bitmap bitmapImageView){
+    public void setBitmapImageView(Bitmap bitmapImageView) {
         imgAvatarinProFile.setImageBitmap(bitmapImageView);
     }
 
@@ -122,10 +129,10 @@ public class NguoiDungFragment extends Fragment {
         this.mUri = mUri;
     }
 
-    private void onClickUpdateProFile(){
+    private void onClickUpdateProFile() {
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
-        if (user == null){
+        if (user == null) {
             return;
         }
         progressDialog.setTitle("Update Profile...");
@@ -151,6 +158,7 @@ public class NguoiDungFragment extends Fragment {
 
     }
 
+
     private void onClickEditEmail(){
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
@@ -171,5 +179,6 @@ public class NguoiDungFragment extends Fragment {
                     }
                 });
     }
+
 
 }
