@@ -31,7 +31,7 @@ public class SplashActivity extends AppCompatActivity {
                     myLoad.putBooleanValue(KEY, true);
                 }
             }
-        }, 4000);
+        }, 2500);
     }
 
     private void startActivity(Class<?> clas){
