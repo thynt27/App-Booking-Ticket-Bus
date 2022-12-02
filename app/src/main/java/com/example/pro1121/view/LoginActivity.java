@@ -20,6 +20,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.pro1121.HuongDan.LoadActivity;
+import com.example.pro1121.HuongDan.SplashActivity;
 import com.example.pro1121.R;
 import com.facebook.AccessToken;
 import com.facebook.AccessTokenTracker;
@@ -193,7 +194,7 @@ public class LoginActivity extends AppCompatActivity {
                 GoogleSignInAccount account = task.getResult(ApiException.class);
                 Log.d(TAG, "firebaseAuthWithGoogle:" + account.getId());
                 firebaseAuthWithGoogle(account.getIdToken());
-                startActivity(new Intent(LoginActivity.this,LoadActivity.class));
+                startActivity(new Intent(LoginActivity.this, SplashActivity.class));
             } catch (ApiException e) {
                 // Google Sign In failed, update UI appropriately
                 Log.w(TAG, "Google sign in failed", e);
@@ -238,7 +239,7 @@ public class LoginActivity extends AppCompatActivity {
                             Log.d(TAG, "signInWithCredential:success");
                             FirebaseUser user = firebaseAuth.getCurrentUser();
                             Toast.makeText(LoginActivity.this, "Authentication Succeeded.", Toast.LENGTH_SHORT).show();
-                            startActivity(new Intent(LoginActivity.this, LoadActivity.class));
+                            startActivity(new Intent(LoginActivity.this, SplashActivity.class));
                         } else {
                             // If sign-in fails, a message will display to the user.
                             Log.w(TAG, "signInWithCredential:failure", task.getException());
@@ -281,7 +282,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<AuthResult> task) {
              if (task.isSuccessful()){
                  Toast.makeText(LoginActivity.this, "Đăng nhập thành công!", Toast.LENGTH_SHORT).show();
-                 Intent i = new Intent(LoginActivity.this, LoadActivity.class);
+                 Intent i = new Intent(LoginActivity.this, SplashActivity.class);
                  startActivity(i);
              }else{
                  Toast.makeText(LoginActivity.this, "Đăng nhập không thành công!\n Vui lòng kiểm tra lại Email hoặc Password!", Toast.LENGTH_SHORT).show();

@@ -126,7 +126,8 @@ public class MainActivity extends AppCompatActivity {
                         fragment = new VeXeFragment();
                         break;
                     case R.id.mTinTuc:
-                        fragment = new TinTucFragment();
+                        Intent i = new Intent(MainActivity.this, TinTucActivity.class);
+                        startActivity(i);
                         break;
                     case R.id.mThoat:
                         //Logout google
