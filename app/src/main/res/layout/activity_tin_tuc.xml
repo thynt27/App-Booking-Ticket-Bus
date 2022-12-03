@@ -49,9 +49,41 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:textSize="15dp"
-            android:layout_marginRight="9dp"
+            android:layout_marginTop="5dp"
             android:textColor="@color/black"
-            android:text="Cảm ơn bạn đã sử dụng ứng dụng đặt vé xe Bus của chúng tôi. Ứng dụng này được thục hiện bới ForMemberStudio, ứng dụng cho phép người dùng xem và đặt vé 1 cách nhanh và tiện lợi. Cùng với sự tiện lợi đó thì chúng tôi là 1 nhà xe uy tín có nhiều bến xe trải dài khắp cả nước Việt Nam, chúng tôi luôn đặt sự trải nghiệm và uy tín của chúng tôi với khách hàng lên hàng đầu. Với tuổi đời lên đến hơn 15 năm thì chúng tôi tin chắc rằng dây là lựa chọn tuyệt vời cho bạn và gia đình trong những chuyên đi xa. Nếu có những điều chưa được vừa ý hay là còn mắc lỗi ở những nơi nào thì xin gửi vào phần đánh giá. Và cuối cùng xin cảm ơn mọi người đã ủng hộ và tin tưởng sử dụng của chúng tôi."/>
+            android:text="Cảm ơn bạn đã sử dụng ứng dụng đặt vé xe Bus của chúng tôi. Ứng dụng này được thục hiện bới ForMemberStudio."/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:layout_margin="5dp"
+            android:src="@drawable/trambus2" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textSize="15dp"
+            android:layout_marginRight="2dp"
+            android:textColor="@color/black"
+            android:text="Ứng dụng cho phép người dùng xem và đặt vé 1 cách nhanh và tiện lợi. Cùng với sự tiện lợi đó thì chúng tôi là 1 nhà xe uy tín có nhiều bến xe trải dài khắp cả nước Việt Nam, chúng tôi luôn đặt sự trải nghiệm và uy tín của chúng tôi với khách hàng lên hàng đầu. "/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="160dp"
+            android:layout_margin="5dp"
+            android:src="@drawable/trambus1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:textSize="15dp"
+            android:layout_marginRight="2dp"
+            android:textColor="@color/black"
+            android:text="Với tuổi đời lên đến hơn 15 năm thì chúng tôi tin chắc rằng dây là lựa chọn tuyệt vời cho bạn và gia đình trong những chuyến đi xa. Nếu có những điều chưa được vừa ý hay là còn mắc lỗi ở những nơi nào thì xin gửi vào phần đánh giá. Và cuối cùng xin cảm ơn mọi người đã ủng hộ và tin tưởng sử dụng của chúng tôi."
+            />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -63,31 +95,14 @@
             android:text="Thank !"/>
 
         <TextView
+            android:id="@+id/nextNews"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Tin tức ngày mới:"
+            android:text="Tin tức ngày mới: Nhấn vào để xem tin tức ..."
             android:drawableLeft="@drawable/ic_new_24"
-            android:textSize="18dp"
+            android:textSize="19dp"
             android:layout_marginTop="8dp"
             android:textColor="@color/black"
             android:textStyle="bold"/>
-
-
     </LinearLayout>
-
-    <ListView
-        android:id="@+id/listViewNews"
-        android:layout_width="match_parent"
-        android:layout_height="406dp"
-        android:layout_below="@+id/nulll"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="0dp" />
-
-    <ProgressBar
-        android:id="@+id/progressBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"/>
 </RelativeLayout>

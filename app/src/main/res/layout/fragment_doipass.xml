@@ -34,8 +34,8 @@
                 android:layout_height="45dp"
                 android:layout_marginTop="5dp"
                 android:background="@drawable/edtlogin"
-                android:drawableLeft="@drawable/ic_people"
-                android:hint="Nhập mật khẩu cũ"
+                android:drawableLeft="@drawable/password_24"
+                android:hint=" Nhập mật khẩu cũ"
                 android:paddingLeft="5dp"
                 android:textSize="20dp" />
 
@@ -45,8 +45,8 @@
                 android:layout_height="45dp"
                 android:layout_marginTop="15dp"
                 android:background="@drawable/edtlogin"
-                android:drawableLeft="@drawable/ic_people"
-                android:hint="Nhập mật khẩu mới"
+                android:drawableLeft="@drawable/password_24"
+                android:hint=" Nhập mật khẩu mới"
                 android:paddingLeft="5dp"
                 android:textSize="20dp" />
 
@@ -56,8 +56,8 @@
                 android:layout_height="45dp"
                 android:layout_marginTop="15dp"
                 android:background="@drawable/edtlogin"
-                android:drawableLeft="@drawable/ic_email"
-                android:hint="Nhập lại mật khẩu mới"
+                android:drawableLeft="@drawable/password_24"
+                android:hint=" Nhập lại mật khẩu mới"
                 android:paddingLeft="5dp"
                 android:textSize="20dp" />
 
