@@ -33,8 +33,7 @@ import com.example.pro1121.Fragment.FeedBackFragment;
 import com.example.pro1121.Fragment.NguoiDungFragment;
 import com.example.pro1121.Fragment.TimChuyenFragment;
 import com.example.pro1121.Fragment.TimTramFragment;
-import com.example.pro1121.Fragment.TinTucFragment;
-import com.example.pro1121.Fragment.TramXeFragment;
+import com.example.pro1121.Fragment.TimVeFragment;
 import com.example.pro1121.Fragment.TrangChuFragment;
 import com.example.pro1121.Fragment.VeXeFragment;
 import com.example.pro1121.R;
@@ -123,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
                         fragment = new TimTramFragment();
                         break;
                     case R.id.mThongTinVeXe:
-                        fragment = new VeXeFragment();
+                        fragment = new TimVeFragment();
                         break;
                     case R.id.mTinTuc:
                         Intent i = new Intent(MainActivity.this, TinTucActivity.class);
