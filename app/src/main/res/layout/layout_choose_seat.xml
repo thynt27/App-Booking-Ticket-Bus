@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ChooseSeat">
+    tools:context=".view.DatXeActivity">
 
 
     <com.google.android.material.appbar.AppBarLayout
@@ -94,6 +94,7 @@
                         android:weightSum="100">
 
                         <TextView
+                            android:id="@+id/diemdive"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="45"
@@ -111,6 +112,7 @@
                             android:src="@drawable/ic_swap_horiz_white_24dp" />
 
                         <TextView
+                            android:id="@+id/diemdenve"
                             android:layout_width="0dp"
                             android:layout_height="match_parent"
                             android:layout_weight="45"
@@ -163,6 +165,7 @@
                                 android:orientation="vertical">
 
                                 <TextView
+                                    android:id="@+id/giodatve"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/calibri"
@@ -180,14 +183,19 @@
                                     android:textColor="#4b4b4b"
                                     android:textStyle="bold" />
 
+
+
                                 <TextView
+                                    android:textSize="15dp"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/calibri"
-                                    android:text="A/C Sleeper (2+2)"
+                                    android:text="Thời Gian Chuyến Đi"
                                     android:textColor="#8a8a8a" />
 
+
                             </LinearLayout>
+
 
                             <LinearLayout
                                 android:layout_width="0dp"
@@ -197,6 +205,7 @@
                                 android:orientation="vertical">
 
                                 <TextView
+                                    android:id="@+id/tienve"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/calibri"
@@ -207,6 +216,7 @@
                                     android:textStyle="bold" />
 
                                 <TextView
+                                    android:id="@+id/giochuyendi"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_marginTop="4dp"
@@ -215,12 +225,32 @@
                                     android:text="3.30 Hour"
                                     android:textAlignment="textEnd"
                                     android:textColor="#b3b3b3" />
+                                <TextView
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/soluongve"
+                                    android:textSize="17dp"
+                                    android:textAlignment="textEnd"
+                                    android:textStyle="bold"
+                                    android:text="123"
+                                    android:textColor="#131313">
+
+                                </TextView>
+                                <Button
+                                    android:id="@+id/dat"
+                                    android:text="Đặt vé"
+                                    android:layout_width="100dp"
+                                    android:layout_height="50dp">
+
+                                </Button>
                             </LinearLayout>
                         </LinearLayout>
 
                     </androidx.cardview.widget.CardView>
 
                 </RelativeLayout>
+
+
 
 
                 <androidx.cardview.widget.CardView
@@ -232,6 +262,7 @@
                     app:cardCornerRadius="4dp"
                     app:cardUseCompatPadding="true"
                     app:contentPadding="8dp">
+
 
 
                     <LinearLayout
@@ -263,9 +294,9 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/calibri"
-                                    android:text="Booked"
+                                    android:text="Booker"
                                     android:textAlignment="center"
-                                    android:textColor="#b2b2b2" />
+                                    android:textColor="#120F0F"/>
 
 
                             </LinearLayout>
@@ -288,7 +319,7 @@
                                     android:fontFamily="@font/calibri"
                                     android:text="Available"
                                     android:textAlignment="center"
-                                    android:textColor="#b2b2b2" />
+                                    android:textColor="#120F0F" />
                             </LinearLayout>
 
                             <LinearLayout
@@ -309,7 +340,7 @@
                                     android:fontFamily="@font/calibri"
                                     android:text="Your Seat"
                                     android:textAlignment="center"
-                                    android:textColor="#b2b2b2" />
+                                    android:textColor="#120F0F" />
                             </LinearLayout>
 
                         </LinearLayout>
@@ -334,7 +365,7 @@
                                     android:layout_marginEnd="16dp"
                                     android:fontFamily="@font/print_clearly"
                                     android:text="1"
-                                    android:textColor="#c3c3c3"
+                                    android:textColor="#120F0F"
                                     android:textSize="18sp"
                                     android:textStyle="bold"
                                     android:visibility="invisible" />
@@ -346,7 +377,7 @@
                                     android:fontFamily="@font/print_clearly"
                                     android:text="A"
                                     android:textAlignment="center"
-                                    android:textColor="#c3c3c3"
+                                    android:textColor="#120F0F"
                                     android:textSize="18sp"
                                     android:textStyle="bold" />
 
@@ -357,7 +388,7 @@
                                     android:fontFamily="@font/print_clearly"
                                     android:text="B"
                                     android:textAlignment="center"
-                                    android:textColor="#c3c3c3"
+                                    android:textColor="#120F0F"
                                     android:textSize="18sp"
                                     android:textStyle="bold" />
 
@@ -377,7 +408,7 @@
                                     android:fontFamily="@font/print_clearly"
                                     android:text="C"
                                     android:textAlignment="center"
-                                    android:textColor="#c3c3c3"
+                                    android:textColor="#120F0F"
                                     android:textSize="18sp"
                                     android:textStyle="bold" />
 
@@ -388,7 +419,7 @@
                                     android:fontFamily="@font/print_clearly"
                                     android:text="D"
                                     android:textAlignment="center"
-                                    android:textColor="#c3c3c3"
+                                    android:textColor="#120F0F"
                                     android:textSize="18sp"
                                     android:textStyle="bold" />
 
@@ -415,21 +446,27 @@
                                     android:layout_marginEnd="16dp"
                                     android:fontFamily="@font/print_clearly"
                                     android:text="1"
-                                    android:textColor="#c3c3c3"
+                                    android:textColor="#120F0F"
                                     android:textSize="18sp"
                                     android:textStyle="bold" />
 
-                                <ImageView
+                                <ImageButton
+                                    android:id="@+id/A1"
                                     android:layout_width="36dp"
-                                    android:layout_height="36dp"
-                                    android:layout_marginEnd="4dp"
-                                    android:src="@drawable/booked" />
+                                    android:layout_height="match_parent"
 
-                                <ImageView
+                                    android:layout_marginEnd="4dp"
+                                    android:src="@drawable/booked"
+                                    android:textAlignment="center">
+
+                                </ImageButton>
+
+                                <ImageButton
+                                    android:id="@+id/B1"
                                     android:layout_width="36dp"
                                     android:layout_height="36dp"
                                     android:layout_marginStart="4dp"
-                                    android:src="@drawable/available_img" />
+                                    android:src="@drawable/available_img"></ImageButton>
 
                             </LinearLayout>
 
@@ -439,13 +476,15 @@
                                 android:layout_weight="50"
                                 android:gravity="center">
 
-                                <ImageView
+                                <ImageButton
+                                    android:id="@+id/C1"
                                     android:layout_width="36dp"
                                     android:layout_height="36dp"
                                     android:layout_marginEnd="4dp"
                                     android:src="@drawable/booked" />
 
-                                <ImageView
+                                <ImageButton
+                                    android:id="@+id/D1"
                                     android:layout_width="36dp"
                                     android:layout_height="36dp"
                                     android:layout_marginStart="4dp"
@@ -475,17 +514,19 @@
                                     android:layout_marginEnd="16dp"
                                     android:fontFamily="@font/print_clearly"
                                     android:text="2"
-                                    android:textColor="#c3c3c3"
+                                    android:textColor="#120F0F"
                                     android:textSize="18sp"
                                     android:textStyle="bold" />
 
-                                <ImageView
+                                <ImageButton
+                                    android:id="@+id/A2"
                                     android:layout_width="36dp"
                                     android:layout_height="36dp"
                                     android:layout_marginEnd="4dp"
                                     android:src="@drawable/available_img" />
 
-                                <ImageView
+                                <ImageButton
+                                    android:id="@+id/B2"
                                     android:layout_width="36dp"
                                     android:layout_height="36dp"
                                     android:layout_marginStart="4dp"
@@ -499,13 +540,15 @@
                                 android:layout_weight="50"
                                 android:gravity="center">
 
-                                <ImageView
+                                <ImageButton
+                                    android:id="@+id/C2"
                                     android:layout_width="36dp"
                                     android:layout_height="36dp"
                                     android:layout_marginEnd="4dp"
                                     android:src="@drawable/booked" />
 
-                                <ImageView
+                                <ImageButton
+                                    android:id="@+id/D2"
                                     android:layout_width="36dp"
                                     android:layout_height="36dp"
                                     android:layout_marginStart="4dp"
@@ -534,17 +577,19 @@
                                     android:layout_marginEnd="16dp"
                                     android:fontFamily="@font/print_clearly"
                                     android:text="3"
-                                    android:textColor="#c3c3c3"
+                                    android:textColor="#120F0F"
                                     android:textSize="18sp"
                                     android:textStyle="bold" />
 
-                                <ImageView
+                                <ImageButton
+                                    android:id="@+id/A3"
                                     android:layout_width="36dp"
                                     android:layout_height="36dp"
                                     android:layout_marginEnd="4dp"
                                     android:src="@drawable/available_img" />
 
-                                <ImageView
+                                <ImageButton
+                                    android:id="@+id/B3"
                                     android:layout_width="36dp"
                                     android:layout_height="36dp"
                                     android:layout_marginStart="4dp"
@@ -558,13 +603,15 @@
                                 android:layout_weight="50"
                                 android:gravity="center">
 
-                                <ImageView
+                                <ImageButton
+                                    android:id="@+id/C3"
                                     android:layout_width="36dp"
                                     android:layout_height="36dp"
                                     android:layout_marginEnd="4dp"
                                     android:src="@drawable/available_img" />
 
-                                <ImageView
+                                <ImageButton
+                                    android:id="@+id/D3"
                                     android:layout_width="36dp"
                                     android:layout_height="36dp"
                                     android:layout_marginStart="4dp"
@@ -593,17 +640,19 @@
                                     android:layout_marginEnd="16dp"
                                     android:fontFamily="@font/print_clearly"
                                     android:text="4"
-                                    android:textColor="#c3c3c3"
+                                    android:textColor="#120F0F"
                                     android:textSize="18sp"
                                     android:textStyle="bold" />
 
-                                <ImageView
+                                <ImageButton
+                                    android:id="@+id/A4"
                                     android:layout_width="36dp"
                                     android:layout_height="36dp"
                                     android:layout_marginEnd="4dp"
                                     android:src="@drawable/available_img" />
 
-                                <ImageView
+                                <ImageButton
+                                    android:id="@+id/B4"
                                     android:layout_width="36dp"
                                     android:layout_height="36dp"
                                     android:layout_marginStart="4dp"
@@ -617,13 +666,15 @@
                                 android:layout_weight="50"
                                 android:gravity="center">
 
-                                <ImageView
+                                <ImageButton
+                                    android:id="@+id/C4"
                                     android:layout_width="36dp"
                                     android:layout_height="36dp"
                                     android:layout_marginEnd="4dp"
                                     android:src="@drawable/available_img" />
 
-                                <ImageView
+                                <ImageButton
+                                    android:id="@+id/D4"
                                     android:layout_width="36dp"
                                     android:layout_height="36dp"
                                     android:layout_marginStart="4dp"
@@ -652,17 +703,19 @@
                                     android:layout_marginEnd="16dp"
                                     android:fontFamily="@font/print_clearly"
                                     android:text="5"
-                                    android:textColor="#c3c3c3"
+                                    android:textColor="#120F0F"
                                     android:textSize="18sp"
                                     android:textStyle="bold" />
 
-                                <ImageView
+                                <ImageButton
+                                    android:id="@+id/A5"
                                     android:layout_width="36dp"
                                     android:layout_height="36dp"
                                     android:layout_marginEnd="4dp"
                                     android:src="@drawable/booked" />
 
-                                <ImageView
+                                <ImageButton
+                                    android:id="@+id/B5"
                                     android:layout_width="36dp"
                                     android:layout_height="36dp"
                                     android:layout_marginStart="4dp"
@@ -676,13 +729,15 @@
                                 android:layout_weight="50"
                                 android:gravity="center">
 
-                                <ImageView
+                                <ImageButton
+                                    android:id="@+id/C5"
                                     android:layout_width="36dp"
                                     android:layout_height="36dp"
                                     android:layout_marginEnd="4dp"
                                     android:src="@drawable/your_seat_img" />
 
-                                <ImageView
+                                <ImageButton
+                                    android:id="@+id/D5"
                                     android:layout_width="36dp"
                                     android:layout_height="36dp"
                                     android:layout_marginStart="4dp"
@@ -711,17 +766,19 @@
                                     android:layout_marginEnd="16dp"
                                     android:fontFamily="@font/print_clearly"
                                     android:text="6"
-                                    android:textColor="#c3c3c3"
+                                    android:textColor="#120F0F"
                                     android:textSize="18sp"
                                     android:textStyle="bold" />
 
-                                <ImageView
+                                <ImageButton
+                                    android:id="@+id/A6"
                                     android:layout_width="36dp"
                                     android:layout_height="36dp"
                                     android:layout_marginEnd="4dp"
                                     android:src="@drawable/available_img" />
 
-                                <ImageView
+                                <ImageButton
+                                    android:id="@+id/B6"
                                     android:layout_width="36dp"
                                     android:layout_height="36dp"
                                     android:layout_marginStart="4dp"
@@ -735,13 +792,15 @@
                                 android:layout_weight="50"
                                 android:gravity="center">
 
-                                <ImageView
+                                <ImageButton
+                                    android:id="@+id/C6"
                                     android:layout_width="36dp"
                                     android:layout_height="36dp"
                                     android:layout_marginEnd="4dp"
                                     android:src="@drawable/booked" />
 
-                                <ImageView
+                                <ImageButton
+                                    android:id="@+id/D6"
                                     android:layout_width="36dp"
                                     android:layout_height="36dp"
                                     android:layout_marginStart="4dp"
@@ -770,17 +829,19 @@
                                     android:layout_marginEnd="16dp"
                                     android:fontFamily="@font/print_clearly"
                                     android:text="7"
-                                    android:textColor="#c3c3c3"
+                                    android:textColor="#120F0F"
                                     android:textSize="18sp"
                                     android:textStyle="bold" />
 
-                                <ImageView
+                                <ImageButton
+                                    android:id="@+id/A7"
                                     android:layout_width="36dp"
                                     android:layout_height="36dp"
                                     android:layout_marginEnd="4dp"
                                     android:src="@drawable/booked" />
 
-                                <ImageView
+                                <ImageButton
+                                    android:id="@+id/B7"
                                     android:layout_width="36dp"
                                     android:layout_height="36dp"
                                     android:layout_marginStart="4dp"
@@ -794,13 +855,15 @@
                                 android:layout_weight="50"
                                 android:gravity="center">
 
-                                <ImageView
+                                <ImageButton
+                                    android:id="@+id/C7"
                                     android:layout_width="36dp"
                                     android:layout_height="36dp"
                                     android:layout_marginEnd="4dp"
                                     android:src="@drawable/available_img" />
 
-                                <ImageView
+                                <ImageButton
+                                    android:id="@+id/D7"
                                     android:layout_width="36dp"
                                     android:layout_height="36dp"
                                     android:layout_marginStart="4dp"
@@ -829,17 +892,19 @@
                                     android:layout_marginEnd="16dp"
                                     android:fontFamily="@font/print_clearly"
                                     android:text="8"
-                                    android:textColor="#c3c3c3"
+                                    android:textColor="#120F0F"
                                     android:textSize="18sp"
                                     android:textStyle="bold" />
 
-                                <ImageView
+                                <ImageButton
+                                    android:id="@+id/A8"
                                     android:layout_width="36dp"
                                     android:layout_height="36dp"
                                     android:layout_marginEnd="4dp"
                                     android:src="@drawable/available_img" />
 
-                                <ImageView
+                                <ImageButton
+                                    android:id="@+id/B8"
                                     android:layout_width="36dp"
                                     android:layout_height="36dp"
                                     android:layout_marginStart="4dp"
@@ -853,13 +918,15 @@
                                 android:layout_weight="50"
                                 android:gravity="center">
 
-                                <ImageView
+                                <ImageButton
+                                    android:id="@+id/C8"
                                     android:layout_width="36dp"
                                     android:layout_height="36dp"
                                     android:layout_marginEnd="4dp"
                                     android:src="@drawable/booked" />
 
-                                <ImageView
+                                <ImageButton
+                                    android:id="@+id/D8"
                                     android:layout_width="36dp"
                                     android:layout_height="36dp"
                                     android:layout_marginStart="4dp"
@@ -888,17 +955,19 @@
                                     android:layout_marginEnd="16dp"
                                     android:fontFamily="@font/print_clearly"
                                     android:text="9"
-                                    android:textColor="#c3c3c3"
+                                    android:textColor="#120F0F"
                                     android:textSize="18sp"
                                     android:textStyle="bold" />
 
-                                <ImageView
+                                <ImageButton
+                                    android:id="@+id/A9"
                                     android:layout_width="36dp"
                                     android:layout_height="36dp"
                                     android:layout_marginEnd="4dp"
                                     android:src="@drawable/booked" />
 
-                                <ImageView
+                                <ImageButton
+                                    android:id="@+id/B9"
                                     android:layout_width="36dp"
                                     android:layout_height="36dp"
                                     android:layout_marginStart="4dp"
@@ -912,13 +981,15 @@
                                 android:layout_weight="50"
                                 android:gravity="center">
 
-                                <ImageView
+                                <ImageButton
+                                    android:id="@+id/C9"
                                     android:layout_width="36dp"
                                     android:layout_height="36dp"
                                     android:layout_marginEnd="4dp"
                                     android:src="@drawable/booked" />
 
-                                <ImageView
+                                <ImageButton
+                                    android:id="@+id/D9"
                                     android:layout_width="36dp"
                                     android:layout_height="36dp"
                                     android:layout_marginStart="4dp"

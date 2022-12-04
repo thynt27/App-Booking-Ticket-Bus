@@ -1,10 +1,12 @@
 package com.example.pro1121.Fragment;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -13,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.example.pro1121.Adapter.IAdapterClickEvent;
 import com.example.pro1121.R;
@@ -31,12 +34,8 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.Map;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link TimChuyenFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class TimChuyenFragment extends Fragment  {
+
+public class TimChuyenFragment extends Fragment {
     private ArrayList<ChuyenXE> chuyenxes;
     EditText diemden1;
     private EditText diemdi1;
@@ -44,13 +43,30 @@ public class TimChuyenFragment extends Fragment  {
     ImageButton chuyendoi;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     private ChuyenXE chuyenXE=null;
+    private View view;
+    public String id_chuyenxe;
+//    private TruyenId mTruyenId;
+//
+////    public interface  TruyenId{
+////        void Truyendata(String idchuyenxedat);
+////    }
+
+//    @Override
+//    public void onAttach(@NonNull Context context) {
+//        super.onAttach(context);
+//        if (context instanceof TruyenId ){
+//            mTruyenId= (TruyenId) getActivity();
+//        } else {
+//            throw new RuntimeException(context.toString() + " must implement onViewSelected");
+//        }
+//
+//    }
 
     public TimChuyenFragment() {
 
     }
 
-
-    // TODO: Rename and change types and number of parameters
+//    // TODO: Rename and change types and number of parameters
     public static TimChuyenFragment newInstance(ArrayList<ChuyenXE> chuyenxes) {
         TimChuyenFragment fragment = new TimChuyenFragment();
         Bundle args = new Bundle();
@@ -65,8 +81,10 @@ public class TimChuyenFragment extends Fragment  {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            chuyenxes = (ArrayList<ChuyenXE>) getArguments().getSerializable("chuyenxe");
+            chuyenxes = (ArrayList<ChuyenXE>)
+                    getArguments().getSerializable("chuyenxe");
         }
+
 
 
     }
@@ -74,7 +92,7 @@ public class TimChuyenFragment extends Fragment  {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view=inflater.inflate(R.layout.fragment_tim_chuyen,container,false);
+        view=inflater.inflate(R.layout.fragment_tim_chuyen,container,false);
         diemdi1=view.findViewById(R.id.diemdi);
         diemden1=view.findViewById(R.id.diemden);
         btntim=view.findViewById(R.id.btntim);
@@ -92,6 +110,7 @@ public class TimChuyenFragment extends Fragment  {
             @Override
             public void onClick(View v) {
                 getData();
+
             }
         });
 
@@ -147,7 +166,11 @@ public class TimChuyenFragment extends Fragment  {
 
                                     ChuyenXE chuyenXE23= new ChuyenXE(-1,diemdi23,diemden23,gio23,soxe23,gia23);
                                     chuyenXE23.setIdchuyenxe(list.get(i).getIdchuyenxe());
+
                                     list2.add(chuyenXE23);
+                                    id_chuyenxe=chuyenXE23.getIdchuyenxe();
+                                    Log.d("aaa",chuyenXE23.getIdchuyenxe());
+
 
                                 }
                             }
@@ -161,5 +184,7 @@ public class TimChuyenFragment extends Fragment  {
                 });
 
     }
+
+
 
 }

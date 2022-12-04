@@ -2,6 +2,7 @@ package com.example.pro1121.Fragment;
 
 import android.app.ProgressDialog;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -48,24 +49,48 @@ public class DoiPassFragment extends Fragment {
     }
 
     private void onClickChangePassword(){
-        String newPassword = edtNewPass1.getText().toString().trim();
-        progressDialog.setTitle("Cập nhật mật khẩu...");
-        progressDialog.show();
-
+        String new1 = edtNewPass1.getText().toString().trim();
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        String new2 = edtNewPass2.getText().toString().trim();
+        String old = edtOldPass.getText().toString().trim();
 
-        user.updatePassword(newPassword)
-                .addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task) {
-                        if (task.isSuccessful()) {
-                            Toast.makeText(getActivity(), "Cập nhật mật khẩu mới thành công !!!", Toast.LENGTH_SHORT).show();
-                            progressDialog.dismiss();
-                        }else{
-                            // show dialog reAuthentication
+        if (new1.isEmpty()){
+            Toast.makeText(getActivity(), "Vui lòng nhập Password mới !!!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (new1.length() < 6){
+            Toast.makeText(getActivity(), "Mật khẩu mới phải từ 6 kí tự !!!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (old.isEmpty()){
+            Toast.makeText(getActivity(), "Vui lòng nhập Password cũ !!!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (new1.isEmpty()){
+            Toast.makeText(getActivity(), "Vui lòng nhập lại Password cũ !!!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (new1.equals(new2) == false || new2.equals(new1)  == false){
+            Toast.makeText(getActivity(), "Cập nhật thất bại !!!\n Vui lòng kiểm tra lại !!!", Toast.LENGTH_SHORT).show();
+            return;
+        }
+            progressDialog.setTitle("Cập nhật mật khẩu...");
+            progressDialog.show();
+
+            user.updatePassword(new1)
+                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if (task.isSuccessful()) {
+                                Toast.makeText(getActivity(), "Cập nhật mật khẩu mới thành công !!!", Toast.LENGTH_SHORT).show();
+                                progressDialog.dismiss();
+                            }else{
+                                // show dialog reAuthentication\\
+                                Toast.makeText(getActivity(), "Cập nhật thất bại !!!\n Vui lòng kiểm tra lại !!!", Toast.LENGTH_SHORT).show();
+                                progressDialog.dismiss();
+                            }
                         }
-                    }
-                });
+                    });
     }
 
     private void reAuthentication(){  // Xac thuc nguoi dung khi da lau ko dang nhap

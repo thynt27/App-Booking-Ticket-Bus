@@ -66,7 +66,7 @@ public class ChuyenXeFragment extends Fragment  {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         lvFrgChuyenXe=view.findViewById(R.id.lvFrgChuyenXe);
-        ChuyenXeAdapter adapter=new ChuyenXeAdapter(chuyenxes,getContext());
+        ChuyenXeAdapter adapter=new ChuyenXeAdapter(chuyenxes,getContext(),getActivity());
         lvFrgChuyenXe.setAdapter(adapter);
         lvFrgChuyenXe.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override

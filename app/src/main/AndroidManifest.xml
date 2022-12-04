@@ -86,6 +86,14 @@
             android:name=".news.TinTucActivity"
             android:exported="true">
         </activity>
+        <activity
+            android:name=".news.TinTuc2Activity"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".news.WebviewActivity"
+            android:exported="true">
+        </activity>
 
 
         <activity

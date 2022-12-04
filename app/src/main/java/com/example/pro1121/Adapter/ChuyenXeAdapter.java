@@ -1,18 +1,25 @@
 package com.example.pro1121.Adapter;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.pro1121.Fragment.ChuyenXeFragment;
+import com.example.pro1121.Fragment.DatVeFragment;
 import com.example.pro1121.Fragment.TimChuyenFragment;
 import com.example.pro1121.Fragment.TinTucFragment;
 
@@ -24,13 +31,16 @@ import java.util.ArrayList;
 
 public class ChuyenXeAdapter extends BaseAdapter {
     private ArrayList<ChuyenXE> list;
+    private TimChuyenFragment abc;
 
     private Context context;
+    private Activity activity;
 
-    public ChuyenXeAdapter(ArrayList<ChuyenXE> list,Context context) {
+    public ChuyenXeAdapter(ArrayList<ChuyenXE> list,Context context,Activity activity) {
 
         this.list = list;
         this.context=context;
+        this.activity=activity;
 
     }
 
@@ -77,7 +87,10 @@ public class ChuyenXeAdapter extends BaseAdapter {
             public void onClick(View v) {
 
             Intent intent= new Intent(context, DatXeActivity.class);
+               intent.putExtra("id",chuyenXE.getIdchuyenxe());
             context.startActivity(intent);
+
+
 
             }
         });
