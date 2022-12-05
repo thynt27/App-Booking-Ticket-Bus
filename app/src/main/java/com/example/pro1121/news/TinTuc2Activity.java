@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.pro1121.Fragment.TrangChuFragment;
 import com.example.pro1121.R;
 import com.example.pro1121.view.MainActivity;
 
@@ -58,13 +59,6 @@ public class TinTuc2Activity extends AppCompatActivity {
             }
         });
 
-        backdaynha.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(TinTuc2Activity.this, MainActivity.class);
-                startActivity(i);
-            }
-        });
 
     }
 

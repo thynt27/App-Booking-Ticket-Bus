@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.pro1121.R;
 import com.example.pro1121.news.TinTucActivity;
+import com.example.pro1121.view.MainActivity;
 import com.example.pro1121.view.TimChuyenActivity;
 
 public class TrangChuFragment extends Fragment {
@@ -32,46 +33,7 @@ public class TrangChuFragment extends Fragment {
         imgNewsinMain = view.findViewById(R.id.imgNewsinMain);
         imgExitinMain = view.findViewById(R.id.imgExitinMain);
 
-
-        imgSearchBusinMain.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-            }
-        });
-
-        imgMapBusinMain.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                fragment = new TramXeFragment();
-            }
-        });
-
-        imgHistoryBusinMain.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-//                fragment = new HistoryFragment();
-            }
-        });
-
-        imgProfileinMain.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-//                fragment = new FragmentProfile();
-            }
-        });
-
-        imgNewsinMain.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-//                fragment = new FragmentNews();
-            }
-        });
-
-        imgExitinMain.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-            }
-        });
+        
 
         return view;
     }
