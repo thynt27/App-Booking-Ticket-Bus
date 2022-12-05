@@ -31,5 +31,13 @@ public class TinTucActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+        backdaynha.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(TinTucActivity.this, MainActivity.class);
+                startActivity(i);
+            }
+        });
     }
 }

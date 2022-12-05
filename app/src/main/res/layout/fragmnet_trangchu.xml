@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:id="@+id/trangchu_fragmenttt"
     android:layout_height="match_parent">
 
     <TextView
@@ -69,9 +70,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="280dp"
+        android:layout_marginLeft="265dp"
         android:layout_marginTop="515dp"
-        android:text="News"
+        android:text="Reset Pass"
         android:textColor="@color/black"
         android:textStyle="bold" />
 
