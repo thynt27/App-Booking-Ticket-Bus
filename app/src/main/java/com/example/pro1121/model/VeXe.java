@@ -1,45 +1,31 @@
 package com.example.pro1121.model;
 
-public class VeXe {
-    private String idVeXe,diemDen,diemDi,gia,gioChuyenDi,gioDatVe,soLuongChoDat,soXe,viTriGhe;
+public class VeXE {
+    int id;
+    String idvexe,vitri,gia,soluong;
 
-    public VeXe() {
+    public int getId() {
+        return id;
     }
 
-    public VeXe(String idVeXe,String diemDen, String diemDi, String gia, String gioChuyenDi, String gioDatVe, String soLuongChoDat, String soXe, String viTriGhe) {
-        this.idVeXe= idVeXe;
-        this.diemDen = diemDen;
-        this.diemDi = diemDi;
-        this.gia = gia;
-        this.gioChuyenDi = gioChuyenDi;
-        this.gioDatVe = gioDatVe;
-        this.soLuongChoDat = soLuongChoDat;
-        this.soXe = soXe;
-        this.viTriGhe = viTriGhe;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getIdVeXe() {
-        return idVeXe;
+    public String getIdvexe() {
+        return idvexe;
     }
 
-    public void setIdVeXe(String idVeXe) {
-        this.idVeXe = idVeXe;
+    public void setIdvexe(String idvexe) {
+        this.idvexe = idvexe;
     }
 
-    public String getDiemDen() {
-        return diemDen;
+    public String getVitri() {
+        return vitri;
     }
 
-    public void setDiemDen(String diemDen) {
-        this.diemDen = diemDen;
-    }
-
-    public String getDiemDi() {
-        return diemDi;
-    }
-
-    public void setDiemDi(String diemDi) {
-        this.diemDi = diemDi;
+    public void setVitri(String vitri) {
+        this.vitri = vitri;
     }
 
     public String getGia() {
@@ -50,43 +36,18 @@ public class VeXe {
         this.gia = gia;
     }
 
-    public String getGioChuyenDi() {
-        return gioChuyenDi;
+    public String getSoluong() {
+        return soluong;
     }
 
-    public void setGioChuyenDi(String gioChuyenDi) {
-        this.gioChuyenDi = gioChuyenDi;
+    public void setSoluong(String soluong) {
+        this.soluong = soluong;
     }
 
-    public String getGioDatVe() {
-        return gioDatVe;
-    }
-
-    public void setGioDatVe(String gioDatVe) {
-        this.gioDatVe = gioDatVe;
-    }
-
-    public String getSoLuongChoDat() {
-        return soLuongChoDat;
-    }
-
-    public void setSoLuongChoDat(String soLuongChoDat) {
-        this.soLuongChoDat = soLuongChoDat;
-    }
-
-    public String getSoXe() {
-        return soXe;
-    }
-
-    public void setSoXe(String soXe) {
-        this.soXe = soXe;
-    }
-
-    public String getViTriGhe() {
-        return viTriGhe;
-    }
-
-    public void setViTriGhe(String viTriGhe) {
-        this.viTriGhe = viTriGhe;
+    public VeXE(int id, String vitri, String gia, String soluong) {
+        this.id = id;
+        this.vitri = vitri;
+        this.gia = gia;
+        this.soluong = soluong;
     }
 }

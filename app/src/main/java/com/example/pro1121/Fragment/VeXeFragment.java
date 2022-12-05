@@ -14,8 +14,10 @@ import androidx.fragment.app.Fragment;
 import com.example.pro1121.Adapter.TramXeAdapter;
 import com.example.pro1121.Adapter.VeXeAdapter;
 import com.example.pro1121.R;
+import com.example.pro1121.model.LichSuVeXe;
 import com.example.pro1121.model.TramXe;
-import com.example.pro1121.model.VeXe;
+import com.example.pro1121.model.VeXE;
+
 
 import java.util.ArrayList;
 
@@ -27,7 +29,7 @@ import java.util.ArrayList;
 public class VeXeFragment extends Fragment  {
 
 
-    private ArrayList<VeXe> veXes;
+    private ArrayList<LichSuVeXe> veXes;
     private ListView lvFrgVeXe;
 
     public VeXeFragment() {
@@ -36,7 +38,7 @@ public class VeXeFragment extends Fragment  {
 
 
 
-    public static VeXeFragment newInstance(ArrayList<VeXe> veXes) {
+    public static VeXeFragment newInstance(ArrayList<LichSuVeXe> veXes) {
 
 
         VeXeFragment fragment = new VeXeFragment();
@@ -51,7 +53,7 @@ public class VeXeFragment extends Fragment  {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            veXes = (ArrayList<VeXe>) getArguments().getSerializable("vexe");
+            veXes = (ArrayList<LichSuVeXe>) getArguments().getSerializable("vexe");
         }
     }
 
@@ -72,7 +74,7 @@ public class VeXeFragment extends Fragment  {
         lvFrgVeXe.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                VeXe tramXe=(VeXe) parent.getItemAtPosition(position);
+                VeXE tramXe=(VeXE) parent.getItemAtPosition(position);
                 // truyen ra activyti
 //                ChuyenXeActivity activity= (ChuyenXeActivity) view.getContext();
 //                activity.onCoursesItemClick(course);

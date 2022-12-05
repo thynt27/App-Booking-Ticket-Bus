@@ -11,16 +11,18 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.pro1121.R;
+import com.example.pro1121.model.LichSuVeXe;
 import com.example.pro1121.model.TramXe;
-import com.example.pro1121.model.VeXe;
+import com.example.pro1121.model.VeXE;
+
 
 import java.util.ArrayList;
 
 public class VeXeAdapter extends BaseAdapter {
-    private ArrayList<VeXe> list;
+    private ArrayList<LichSuVeXe> list;
     private Context context;
 
-    public VeXeAdapter(ArrayList<VeXe> list, Context context) {
+    public VeXeAdapter(ArrayList<LichSuVeXe> list, Context context) {
         this.context = context;
         this.list = list;
     }
@@ -61,7 +63,7 @@ public class VeXeAdapter extends BaseAdapter {
 
 
         }
-        VeXe veXe = (VeXe) getItem(_i);
+        LichSuVeXe veXe = (LichSuVeXe) getItem(_i);
         ViewHolder holder = (ViewHolder) view.getTag();
         holder.diemDen.setText("Điểm đến: "+veXe.getDiemDen());
         holder.diemDi.setText("Điểm đi: "+veXe.getDiemDi());

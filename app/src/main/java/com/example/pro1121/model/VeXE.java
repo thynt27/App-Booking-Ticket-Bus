@@ -4,12 +4,12 @@ public class VeXE {
     int id;
     String idvexe,vitri,gia,soluong;
 
-    public VeXE(int id,  String vitri, String gia, String soluong) {
-        this.id = id;
+    public int getId() {
+        return id;
+    }
 
-        this.vitri = vitri;
-        this.gia = gia;
-        this.soluong = soluong;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getIdvexe() {
@@ -18,14 +18,6 @@ public class VeXE {
 
     public void setIdvexe(String idvexe) {
         this.idvexe = idvexe;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getVitri() {
@@ -49,6 +41,13 @@ public class VeXE {
     }
 
     public void setSoluong(String soluong) {
+        this.soluong = soluong;
+    }
+
+    public VeXE(int id, String vitri, String gia, String soluong) {
+        this.id = id;
+        this.vitri = vitri;
+        this.gia = gia;
         this.soluong = soluong;
     }
 }

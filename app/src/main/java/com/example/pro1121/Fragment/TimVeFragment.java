@@ -15,8 +15,10 @@ import android.widget.Toast;
 import com.example.pro1121.Adapter.IAdapterClickEvent2;
 import com.example.pro1121.R;
 import com.example.pro1121.model.ChuyenXE;
+import com.example.pro1121.model.LichSuVeXe;
 import com.example.pro1121.model.TramXe;
-import com.example.pro1121.model.VeXe;
+import com.example.pro1121.model.VeXE;
+
 import com.example.pro1121.view.ChuyenXeActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -35,17 +37,17 @@ import java.util.Map;
  * create an instance of this fragment.
  */
 public class TimVeFragment extends Fragment implements IAdapterClickEvent2 {
-    private ArrayList<VeXe> veXes;
+    private ArrayList<LichSuVeXe> veXes;
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
-    private VeXe veXe=null;
+    private LichSuVeXe veXe=null;
 
     public TimVeFragment() {
         // Required empty public constructor
     }
 
 
-    public static TimVeFragment newInstance(ArrayList<VeXe> veXes) {
+    public static TimVeFragment newInstance(ArrayList<VeXE> veXes) {
         TimVeFragment fragment = new TimVeFragment();
         Bundle args = new Bundle();
         args.putSerializable("vexe", veXes);
@@ -57,7 +59,7 @@ public class TimVeFragment extends Fragment implements IAdapterClickEvent2 {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            veXes = (ArrayList<VeXe>) getArguments().getSerializable("vexe");
+            veXes = (ArrayList<LichSuVeXe>) getArguments().getSerializable("vexe");
         }
     }
 
@@ -84,7 +86,7 @@ public class TimVeFragment extends Fragment implements IAdapterClickEvent2 {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
-                            ArrayList<VeXe> list= new ArrayList<>();
+                            ArrayList<LichSuVeXe> list= new ArrayList<>();
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 Map<String, Object> map = document.getData();
                                 String diemDen = map.get("diemden").toString();
@@ -96,7 +98,7 @@ public class TimVeFragment extends Fragment implements IAdapterClickEvent2 {
                                 String soxe = map.get("soxe").toString();
                                 String viTriGhe = map.get("vitrive").toString();
 
-                                VeXe veXe = new VeXe(document.getId(),diemDen,diemDi,gia,gioChuyenDi,giodat,soluongcho,soxe,viTriGhe);
+                                LichSuVeXe veXe = new LichSuVeXe(document.getId(),diemDen,diemDi,gia,gioChuyenDi,giodat,soluongcho,soxe,viTriGhe);
                                 veXe.setIdVeXe(document.getId());
                                 list.add(veXe);
 
@@ -109,7 +111,7 @@ public class TimVeFragment extends Fragment implements IAdapterClickEvent2 {
                 });
     }
     @Override
-    public void onDeleteVeXeClick(VeXe veXe) {
+    public void onDeleteVeXeClick(LichSuVeXe veXe) {
         new AlertDialog.Builder(getContext())
                 .setTitle("Xóa")
                 .setMessage("Xóa sẽ không phục hồi đc")
