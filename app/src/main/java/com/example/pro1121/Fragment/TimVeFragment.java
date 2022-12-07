@@ -5,21 +5,22 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ListView;
 import android.widget.Toast;
 
-import com.example.pro1121.Adapter.IAdapterClickEvent2;
+import com.example.pro1121.Adapter.VeXeAdapter;
 import com.example.pro1121.R;
-import com.example.pro1121.model.ChuyenXE;
 import com.example.pro1121.model.LichSuVeXe;
-import com.example.pro1121.model.TramXe;
-import com.example.pro1121.model.VeXE;
 
-import com.example.pro1121.view.ChuyenXeActivity;
+import com.example.pro1121.model.VeXE;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -36,9 +37,11 @@ import java.util.Map;
  * Use the {@link TimVeFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class TimVeFragment extends Fragment implements IAdapterClickEvent2 {
+public class TimVeFragment extends Fragment {
     private ArrayList<LichSuVeXe> veXes;
-
+    VeXeAdapter veXeAdapter;
+   TimVeFragment timVeFragment;
+    private ListView lvVeXe;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     private LichSuVeXe veXe=null;
 
@@ -47,7 +50,7 @@ public class TimVeFragment extends Fragment implements IAdapterClickEvent2 {
     }
 
 
-    public static TimVeFragment newInstance(ArrayList<VeXE> veXes) {
+    public static TimVeFragment newInstance(ArrayList<LichSuVeXe> veXes) {
         TimVeFragment fragment = new TimVeFragment();
         Bundle args = new Bundle();
         args.putSerializable("vexe", veXes);
@@ -69,24 +72,36 @@ public class TimVeFragment extends Fragment implements IAdapterClickEvent2 {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        getData();
         return inflater.inflate(R.layout.fragment_tim_ve, container, false);
-
     }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        lvVeXe = view .findViewById(R.id.lvVeXE);
+        getData();
+//        lvVeXe.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+//            @Override
+//            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+//                VeXE tramXe=(VeXE) parent.getItemAtPosition(position);
+//                return false;
+//            }
+//        });
+    }
+
     @Override
     public void onResume() {
         super.onResume();
         getData();
     }
-    private void getData()
-    {
+    public void getData() {
         db.collection("vexelichsu")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
-                            ArrayList<LichSuVeXe> list= new ArrayList<>();
+                            ArrayList<LichSuVeXe> list = new ArrayList<>();
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 Map<String, Object> map = document.getData();
                                 String diemDen = map.get("diemden").toString();
@@ -97,48 +112,21 @@ public class TimVeFragment extends Fragment implements IAdapterClickEvent2 {
                                 String soluongcho = map.get("soluongdat").toString();
                                 String soxe = map.get("soxe").toString();
                                 String viTriGhe = map.get("vitrive").toString();
-
-                                LichSuVeXe veXe = new LichSuVeXe(document.getId(),diemDen,diemDi,gia,gioChuyenDi,giodat,soluongcho,soxe,viTriGhe);
+                                LichSuVeXe veXe = new LichSuVeXe(document.getId(), diemDen, diemDi, gia, gioChuyenDi, giodat, soluongcho, soxe, viTriGhe);
                                 veXe.setIdVeXe(document.getId());
+
+                                Log.d("TAG>>>>>", "onComplete: " + document.getId());
                                 list.add(veXe);
 
                             }
-                            getActivity().getSupportFragmentManager().beginTransaction()
-                                    .replace(R.id.frltimve, VeXeFragment.newInstance(list)).commit();
+                            veXes = list;
+                            veXeAdapter = new VeXeAdapter(veXes, TimVeFragment.this);
+                            lvVeXe.setAdapter(veXeAdapter);
+
                         }
                     }
 
                 });
     }
-    @Override
-    public void onDeleteVeXeClick(LichSuVeXe veXe) {
-        new AlertDialog.Builder(getContext())
-                .setTitle("Xóa")
-                .setMessage("Xóa sẽ không phục hồi đc")
-                .setNegativeButton("Hủy",null)
-                .setPositiveButton("Đồng ý", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        db.collection("vexelichsu").document(veXe.getIdVeXe())
-                                .delete()
-                                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                                    @Override
-                                    public void onSuccess(Void aVoid) {
-                                        Toast.makeText(getContext(), "Xóa thành công", Toast.LENGTH_SHORT).show();
-                                        getData();
-                                    }
-                                })
-                                .addOnFailureListener(new OnFailureListener() {
-                                    @Override
-                                    public void onFailure(@NonNull Exception e) {
-                                        Toast.makeText(getContext(), "Xóa không thành công", Toast.LENGTH_SHORT).show();
 
-                                    }
-                                });
-
-                    }
-                })
-                .show();
-
-    }
 }

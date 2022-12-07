@@ -1,19 +1,23 @@
 package com.example.pro1121.Adapter;
 
+import android.app.AlertDialog;
 import android.content.Context;
-import android.content.Intent;
-import android.net.Uri;
+import android.content.DialogInterface;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+
+import com.example.pro1121.Fragment.TimVeFragment;
 import com.example.pro1121.R;
 import com.example.pro1121.model.LichSuVeXe;
-import com.example.pro1121.model.TramXe;
-import com.example.pro1121.model.VeXE;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 
 import java.util.ArrayList;
@@ -21,9 +25,13 @@ import java.util.ArrayList;
 public class VeXeAdapter extends BaseAdapter {
     private ArrayList<LichSuVeXe> list;
     private Context context;
+    Button btnHuyVe;
+    TimVeFragment timVeFragment;
 
-    public VeXeAdapter(ArrayList<LichSuVeXe> list, Context context) {
-        this.context = context;
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+    public VeXeAdapter(ArrayList<LichSuVeXe> list, TimVeFragment timVeFragment) {
+        this.timVeFragment= timVeFragment;
         this.list = list;
     }
 
@@ -55,7 +63,7 @@ public class VeXeAdapter extends BaseAdapter {
             TextView soLuongDat = view.findViewById(R.id.txtSoLuongCho);
             TextView soXE = view.findViewById(R.id.txtSoXe);
             TextView viTriGhe = view.findViewById(R.id.txtViTriGhe);
-            Button btnHuyVe = view.findViewById(R.id.btnHuyVe);
+            btnHuyVe = view.findViewById(R.id.btnHuyVe);
 
             ViewHolder holder = new ViewHolder(diemDi,diemDen,gia,gioChuyenDi,gioDat,soLuongDat,soXE,viTriGhe,btnHuyVe);
             view.setTag(holder);
@@ -75,14 +83,36 @@ public class VeXeAdapter extends BaseAdapter {
         holder.viTriGhe.setText("Vị trí: "+veXe.getViTriGhe());
 
 
-        holder.huyVe.setOnClickListener(new View.OnClickListener() {
+        holder.btnHuyVe.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                IAdapterClickEvent2 iAdapterClickEvent = (IAdapterClickEvent2) _viewGroup.getContext();
-                iAdapterClickEvent.onDeleteVeXeClick(veXe);
+                new AlertDialog.Builder(btnHuyVe.getContext())
+                        .setTitle("Xóa")
+                        .setMessage("Xóa sẽ không phục hồi đc")
+                        .setNegativeButton("Hủy",null)
+                        .setPositiveButton("Đồng ý", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                db.collection("vexelichsu").document(veXe.getIdVeXe())
+                                        .delete()
+                                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                            @Override
+                                            public void onSuccess(Void aVoid) {
+                                                Toast.makeText(btnHuyVe.getContext(), "Xóa thành công", Toast.LENGTH_SHORT).show();
+                                                timVeFragment.getData();
+                                            }
+                                        })
+                                        .addOnFailureListener(new OnFailureListener() {
+                                            @Override
+                                            public void onFailure(@NonNull Exception e) {
+                                                Toast.makeText(btnHuyVe.getContext(), "Xóa không thành công", Toast.LENGTH_SHORT).show();
+                                            }
+                                        });
+                            }
+                        })
+                        .show();
             }
         });
-
 
 
         return view;
@@ -90,9 +120,9 @@ public class VeXeAdapter extends BaseAdapter {
     private static class ViewHolder{
 
         final TextView diemDi,diemDen,gia,gioChuyenDi,gioDat,soLuongDat,soXe,viTriGhe;
-        final Button huyVe;
+        final Button btnHuyVe;
 
-        public ViewHolder(TextView diemDi, TextView diemDen, TextView gia, TextView gioChuyenDi, TextView gioDat, TextView soLuongDat, TextView soXe, TextView viTriGhe,Button huyVe) {
+        public ViewHolder(TextView diemDi, TextView diemDen, TextView gia, TextView gioChuyenDi, TextView gioDat, TextView soLuongDat, TextView soXe, TextView viTriGhe,Button btnHuyVe) {
             this.diemDi = diemDi;
             this.diemDen = diemDen;
             this.gia = gia;
@@ -101,7 +131,7 @@ public class VeXeAdapter extends BaseAdapter {
             this.soLuongDat = soLuongDat;
             this.soXe = soXe;
             this.viTriGhe = viTriGhe;
-            this.huyVe=huyVe;
+            this.btnHuyVe=btnHuyVe;
         }
     }
 

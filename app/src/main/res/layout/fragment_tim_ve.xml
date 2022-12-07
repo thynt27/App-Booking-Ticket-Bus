@@ -20,6 +20,14 @@
             android:layout_height="150dp"
             >
 
+
+            <ListView
+                android:layout_marginBottom="20dp"
+                android:id="@+id/lvVeXE"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                />
         </FrameLayout>
 
     </LinearLayout>

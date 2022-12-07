@@ -35,7 +35,6 @@ import com.example.pro1121.Fragment.TimChuyenFragment;
 import com.example.pro1121.Fragment.TimTramFragment;
 import com.example.pro1121.Fragment.TimVeFragment;
 import com.example.pro1121.Fragment.TrangChuFragment;
-import com.example.pro1121.Fragment.VeXeFragment;
 import com.example.pro1121.R;
 import com.example.pro1121.news.TinTucActivity;
 import com.facebook.login.LoginManager;
