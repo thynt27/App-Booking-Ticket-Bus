@@ -11,13 +11,16 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.example.pro1121.R;
+import com.example.pro1121.databinding.FragmentNguoidungBinding;
 import com.example.pro1121.news.TinTucActivity;
+import com.example.pro1121.view.MainActivity;
 import com.example.pro1121.view.TimChuyenActivity;
 
 public class TrangChuFragment extends Fragment {
-    ImageView imgSearchBusinMain,imgMapBusinMain,imgHistoryBusinMain,imgProfileinMain,imgNewsinMain,imgExitinMain;
+    ImageView imgSearchBusinMain,imgMapBusinMain,imgHistoryBusinMain,imgProfileinMain,imgNewsinMain,imgExitinMain, doipass;
     Fragment fragment = null;
 
     @Nullable
@@ -31,48 +34,66 @@ public class TrangChuFragment extends Fragment {
         imgProfileinMain = view.findViewById(R.id.imgProfileinMain);
         imgNewsinMain = view.findViewById(R.id.imgNewsinMain);
         imgExitinMain = view.findViewById(R.id.imgExitinMain);
-
+        doipass = view.findViewById(R.id.doipass);
 
         imgSearchBusinMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Fragment timChuyenFragment = new TimChuyenFragment();
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.replace(R.id.trangchu_fragmenttt, timChuyenFragment);
+                transaction.commit();
             }
         });
 
         imgMapBusinMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                fragment = new TramXeFragment();
+                Fragment timTramFragment = new TimTramFragment();
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.replace(R.id.trangchu_fragmenttt, timTramFragment);
+                transaction.commit();
             }
         });
 
         imgHistoryBusinMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                fragment = new HistoryFragment();
-            }
-        });
-
-        imgProfileinMain.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-//                fragment = new FragmentProfile();
+                Fragment timVeFragment = new TimVeFragment();
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.replace(R.id.trangchu_fragmenttt, timVeFragment);
+                transaction.commit();
             }
         });
 
         imgNewsinMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                fragment = new FragmentNews();
             }
         });
 
-        imgExitinMain.setOnClickListener(new View.OnClickListener() {
+        imgProfileinMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Fragment nguoiDungFragment = new NguoiDungFragment();
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.replace(R.id.trangchu_fragmenttt, nguoiDungFragment);
+                transaction.commit();
             }
         });
+
+        doipass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Fragment doiPassFragment = new DoiPassFragment();
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.replace(R.id.trangchu_fragmenttt, doiPassFragment);
+                transaction.commit();
+            }
+        });
+
 
         return view;
     }
+
 }

@@ -105,6 +105,12 @@ public class MainActivity extends AppCompatActivity {
 
         showProfile();
 
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction()
+                .replace(R.id.frLayout, new TrangChuFragment())
+                .commit();
+        toolbar.setTitle("Trang Chủ");
+
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -178,6 +184,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+
     //Sự kiện cho nút menu
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
