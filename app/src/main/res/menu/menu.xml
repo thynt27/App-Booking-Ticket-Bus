@@ -10,7 +10,7 @@
         android:icon="@drawable/ic_bus" />
 
     <item android:id="@+id/mThongTinVeXe"
-        android:title="Thông Tin Vé Xe"
+        android:title="Vé Xe Đã Đặt"
         android:icon="@drawable/ticket" />
 
     <item android:id="@+id/mThongTinTramXe"

@@ -34,7 +34,6 @@ public class DoiPassFragment extends Fragment {
 
         progressDialog = new ProgressDialog(getActivity());
         btnUpdatePass = view.findViewById(R.id.btnUpdatePass);
-        edtOldPass = view.findViewById(R.id.edtOldPass);
         edtNewPass1 = view.findViewById(R.id.edtNewPass1);
         edtNewPass2 = view.findViewById(R.id.edtNewPass2);
 
@@ -52,7 +51,6 @@ public class DoiPassFragment extends Fragment {
         String new1 = edtNewPass1.getText().toString().trim();
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         String new2 = edtNewPass2.getText().toString().trim();
-        String old = edtOldPass.getText().toString().trim();
 
         if (new1.isEmpty()){
             Toast.makeText(getActivity(), "Vui lòng nhập Password mới !!!", Toast.LENGTH_SHORT).show();
@@ -62,18 +60,11 @@ public class DoiPassFragment extends Fragment {
             Toast.makeText(getActivity(), "Mật khẩu mới phải từ 6 kí tự !!!", Toast.LENGTH_SHORT).show();
             return;
         }
-        if (old.isEmpty()){
-            Toast.makeText(getActivity(), "Vui lòng nhập Password cũ !!!", Toast.LENGTH_SHORT).show();
+        if (new2.isEmpty()){
+            Toast.makeText(getActivity(), "Vui lòng nhập lại Password mới !!!", Toast.LENGTH_SHORT).show();
             return;
         }
-        if (new1.isEmpty()){
-            Toast.makeText(getActivity(), "Vui lòng nhập lại Password cũ !!!", Toast.LENGTH_SHORT).show();
-            return;
-        }
-        if (new1.equals(new2) == false || new2.equals(new1)  == false){
-            Toast.makeText(getActivity(), "Cập nhật thất bại !!!\n Vui lòng kiểm tra lại !!!", Toast.LENGTH_SHORT).show();
-            return;
-        }
+        if (new1.equals(new2) == true){
             progressDialog.setTitle("Cập nhật mật khẩu...");
             progressDialog.show();
 
@@ -84,13 +75,18 @@ public class DoiPassFragment extends Fragment {
                             if (task.isSuccessful()) {
                                 Toast.makeText(getActivity(), "Cập nhật mật khẩu mới thành công !!!", Toast.LENGTH_SHORT).show();
                                 progressDialog.dismiss();
-                            }else{
+                            } else {
                                 // show dialog reAuthentication\\
                                 Toast.makeText(getActivity(), "Cập nhật thất bại !!!\n Vui lòng kiểm tra lại !!!", Toast.LENGTH_SHORT).show();
                                 progressDialog.dismiss();
                             }
                         }
                     });
+
+        }else {
+            Toast.makeText(getActivity(), "Cập nhật thất bại !!!\n Vui lòng kiểm tra lại !!!", Toast.LENGTH_SHORT).show();
+            return;
+        }
     }
 
     private void reAuthentication(){  // Xac thuc nguoi dung khi da lau ko dang nhap
