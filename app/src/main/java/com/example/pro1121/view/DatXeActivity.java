@@ -33,7 +33,8 @@ import androidx.viewpager.widget.ViewPager;
 import com.example.pro1121.Fragment.TimChuyenFragment;
 import com.example.pro1121.R;
 import com.example.pro1121.model.ChuyenXE;
-import com.example.pro1121.model.VeXE;
+
+import com.example.pro1121.model.VeXe;
 import com.example.pro1121.model.VeXeDat;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -62,12 +63,11 @@ public class DatXeActivity extends AppCompatActivity  {
                 C1,C2,C3,C4,C5,C6,C7,C8,C9,
                 D1,D2,D3,D4,D5,D6,D7,D8,D9;
     ArrayList<Object> imb= new ArrayList<>();
-    ArrayList<VeXE> listvx= new ArrayList<>();
+    ArrayList<String>vitrive;
     TextView giodatve,diemdive,diemdenve,giochuyendi,soluongve,tienve;
     Button btndat;
     String vitrine;
     String id_chuyenxe1;
-    VeXE veXE=null;
     VeXeDat veXeDat=null;
     public String id_chuyenxe;
     String soxedat;
@@ -82,6 +82,7 @@ public class DatXeActivity extends AppCompatActivity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_choose_seat);
+        vitrive= new ArrayList<>();
         giodatve=findViewById(R.id.giodatve);
         btndat=findViewById(R.id.dat);
         btndat.setOnClickListener(new View.OnClickListener() {
@@ -105,15 +106,6 @@ public class DatXeActivity extends AppCompatActivity  {
         Toast.makeText(this, "id: "+id_chuyenxe1, Toast.LENGTH_SHORT).show();
 
         getData();
-
-
-
-
-
-
-
-
-
 
 
 
@@ -170,9 +162,9 @@ public class DatXeActivity extends AppCompatActivity  {
                     imb.add(A1);
                     tienve.setText(imb.size()*250000+" VNĐ");
                     soluongve.setText(imb.size()+"  Chổ");
-                    veXE= new VeXE(1,choa1,"2500","1");
-                    listvx.add(veXE);
-                    Log.d("cho",veXE.getVitri());
+                    vitrive.add(choa1);
+
+
 
                 }
                 else
@@ -193,8 +185,7 @@ public class DatXeActivity extends AppCompatActivity  {
                     imb.add(A2);
                     soluongve.setText(imb.size()+"  Chổ");
                     tienve.setText(imb.size()*250000+" VNĐ");
-                    veXE= new VeXE(1,choa1,"2500","1");
-                    listvx.add(veXE);
+                    vitrive.add(choa1);
                 }
                 else
                 {
@@ -214,8 +205,7 @@ public class DatXeActivity extends AppCompatActivity  {
                     imb.add(A3);
                     soluongve.setText(imb.size()+"  Chổ");
                     tienve.setText(imb.size()*250000+" VNĐ");
-                    veXE= new VeXE(1,choa1,"2500","1");
-                    listvx.add(veXE);
+                    vitrive.add(choa1);
 
                 }
                 else
@@ -236,8 +226,7 @@ public class DatXeActivity extends AppCompatActivity  {
                     imb.add(A4);
                     soluongve.setText(imb.size()+"  Chổ");
                     tienve.setText(imb.size()*250000+" VNĐ");
-                     veXE= new VeXE(1,choa1,"2500","1");
-                    listvx.add(veXE);
+                    vitrive.add(choa1);
                 }else
                 {
                     Toast.makeText(DatXeActivity.this, "Đã Được chọn", Toast.LENGTH_SHORT).show();
@@ -257,8 +246,7 @@ public class DatXeActivity extends AppCompatActivity  {
                     imb.add(A5);
                     soluongve.setText(imb.size()+"  Chổ");
                     tienve.setText(imb.size()*250000+" VNĐ");
-                    veXE= new VeXE(1,choa1,"2500","1");
-                    listvx.add(veXE);
+                    vitrive.add(choa1);
                 }
                 else
                 {
@@ -276,8 +264,7 @@ public class DatXeActivity extends AppCompatActivity  {
                     imb.add(A1);
                     soluongve.setText(imb.size()+"  Chổ");
                     tienve.setText(imb.size()*250000+" VNĐ");
-                    veXE= new VeXE(1,choa1,"2500","1");
-                    listvx.add(veXE);
+                    vitrive.add(choa1);
 
                 }
                 else
@@ -296,8 +283,7 @@ public class DatXeActivity extends AppCompatActivity  {
                     imb.add(A7);
                     soluongve.setText(imb.size()+"  Chổ");
                     tienve.setText(imb.size()*250000+" VNĐ");
-                    veXE= new VeXE(1,choa1,"2500","1");
-                    listvx.add(veXE);
+                    vitrive.add(choa1);
 
                 }
                 else
@@ -316,8 +302,7 @@ public class DatXeActivity extends AppCompatActivity  {
                     imb.add(A8);
                     soluongve.setText(imb.size()+"  Chổ");
                     tienve.setText(imb.size()*250000+" VNĐ");
-                    veXE= new VeXE(1,choa1,"2500","1");
-                    listvx.add(veXE);
+                    vitrive.add(choa1);
 
                 }
                 else
@@ -339,8 +324,7 @@ public class DatXeActivity extends AppCompatActivity  {
                     imb.add(A9);
                     soluongve.setText(imb.size()+"  Chổ");
                     tienve.setText(imb.size()*250000+" VNĐ");
-                    veXE= new VeXE(1,choa1,"2500","1");
-                    listvx.add(veXE);
+                    vitrive.add(choa1);
 
                 }
                 else
@@ -360,8 +344,7 @@ public class DatXeActivity extends AppCompatActivity  {
                     imb.add(B1);
                     soluongve.setText(imb.size()+"  Chổ");
                     tienve.setText(imb.size()*250000+" VNĐ");
-                    veXE= new VeXE(1,choa1,"2500","1");
-                    listvx.add(veXE);
+                    vitrive.add(choa1);
 
                 }
                 else
@@ -381,8 +364,7 @@ public class DatXeActivity extends AppCompatActivity  {
                     imb.add(B2);
                     soluongve.setText(imb.size()+"  Chổ");
                     tienve.setText(imb.size()*250000+" VNĐ");
-                    veXE= new VeXE(1,choa1,"2500","1");
-                    listvx.add(veXE);
+                    vitrive.add(choa1);
                 }
                 else
                 {
@@ -401,8 +383,7 @@ public class DatXeActivity extends AppCompatActivity  {
                     imb.add(B3);
                     soluongve.setText(imb.size()+"  Chổ");
                     tienve.setText(imb.size()*250000+" VNĐ");
-                    veXE= new VeXE(1,choa1,"2500","1");
-                    listvx.add(veXE);
+                    vitrive.add(choa1);
                 }
                 else
                 {
@@ -421,8 +402,7 @@ public class DatXeActivity extends AppCompatActivity  {
                     imb.add(B4);
                     soluongve.setText(imb.size()+"  Chổ");
                     tienve.setText(imb.size()*250000+" VNĐ");
-                    veXE= new VeXE(1,choa1,"2500","1");
-                    listvx.add(veXE);
+                    vitrive.add(choa1);
                 }
                 else
                 {
@@ -443,8 +423,7 @@ public class DatXeActivity extends AppCompatActivity  {
                    imb.add(B5);
                    soluongve.setText(imb.size()+"  Chổ");
                    tienve.setText(imb.size()*250000+" VNĐ");
-                   veXE= new VeXE(1,choa1,"2500","1");
-                   listvx.add(veXE);
+                   vitrive.add(choa1);
                }
                else
                {
@@ -463,8 +442,7 @@ public class DatXeActivity extends AppCompatActivity  {
                    imb.add(B6);
                    soluongve.setText(imb.size()+"  Chổ");
                    tienve.setText(imb.size()*250000+" VNĐ");
-                   veXE= new VeXE(1,choa1,"2500","1");
-                   listvx.add(veXE);
+                   vitrive.add(choa1);
                }
                else
                {
@@ -483,8 +461,7 @@ public class DatXeActivity extends AppCompatActivity  {
                    imb.add(B7);
                    soluongve.setText(imb.size()+"  Chổ");
                    tienve.setText(imb.size()*250000+" VNĐ");
-                   veXE= new VeXE(1,choa1,"2500","1");
-                   listvx.add(veXE);
+                   vitrive.add(choa1);
 
                }
                else
@@ -504,8 +481,7 @@ public class DatXeActivity extends AppCompatActivity  {
                    imb.add(B8);
                    soluongve.setText(imb.size()+"  Chổ");
                    tienve.setText(imb.size()*250000+" VNĐ");
-                   veXE= new VeXE(1,choa1,"2500","1");
-                   listvx.add(veXE);
+                   vitrive.add(choa1);
                }
                else
                {
@@ -525,8 +501,7 @@ public class DatXeActivity extends AppCompatActivity  {
                    imb.add(B9);
                    soluongve.setText(imb.size()+"  Chổ");
                    tienve.setText(imb.size()*250000+" VNĐ");
-                   veXE= new VeXE(1,choa1,"2500","1");
-                   listvx.add(veXE);
+                   vitrive.add(choa1);
 
                }
                else
@@ -547,9 +522,7 @@ public class DatXeActivity extends AppCompatActivity  {
                    imb.add(C1);
                    soluongve.setText(imb.size()+"  Chổ");
                    tienve.setText(imb.size()*250000+" VNĐ");
-                   veXE= new VeXE(1,choa1,"2500","1");
-                   Log.d("cho",veXE.getVitri());
-                   listvx.add(veXE);
+                   vitrive.add(choa1);
 
                }
                else
@@ -569,8 +542,7 @@ public class DatXeActivity extends AppCompatActivity  {
                    imb.add(C2);
                    soluongve.setText(imb.size()+"  Chổ");
                    tienve.setText(imb.size()*250000+" VNĐ");
-                   veXE= new VeXE(1,choa1,"2500","1");
-                   listvx.add(veXE);
+                   vitrive.add(choa1);
 
                }
                else
@@ -590,8 +562,7 @@ public class DatXeActivity extends AppCompatActivity  {
                    imb.add(C3);
                    soluongve.setText(imb.size()+"  Chổ");
                    tienve.setText(imb.size()*250000+" VNĐ");
-                   veXE= new VeXE(1,choa1,"2500","1");
-                   listvx.add(veXE);
+                   vitrive.add(choa1);
                }
                else
                {
@@ -612,8 +583,7 @@ public class DatXeActivity extends AppCompatActivity  {
                    imb.add(C4);
                    soluongve.setText(imb.size()+"  Chổ");
                    tienve.setText(imb.size()*250000+" VNĐ");
-                   veXE= new VeXE(1,choa1,"2500","1");
-                   listvx.add(veXE);
+                   vitrive.add(choa1);
                }
                else
                {
@@ -632,8 +602,7 @@ public class DatXeActivity extends AppCompatActivity  {
                    imb.add(C5);
                    soluongve.setText(imb.size()+"  Chổ");
                    tienve.setText(imb.size()*250000+" VNĐ");
-                   veXE= new VeXE(1,choa1,"2500","1");
-                   listvx.add(veXE);
+                   vitrive.add(choa1);
                }
                else
                {
@@ -652,8 +621,7 @@ public class DatXeActivity extends AppCompatActivity  {
                    imb.add(C6);
                    soluongve.setText(imb.size()+"  Chổ");
                    tienve.setText(imb.size()*250000+" VNĐ");
-                   veXE= new VeXE(1,choa1,"2500","1");
-                   listvx.add(veXE);
+                   vitrive.add(choa1);
                }
                else
                {
@@ -673,8 +641,7 @@ public class DatXeActivity extends AppCompatActivity  {
                    imb.add(C7);
                    soluongve.setText(imb.size()+"  Chổ");
                    tienve.setText(imb.size()*250000+" VNĐ");
-                   veXE= new VeXE(1,choa1,"2500","1");
-                   listvx.add(veXE);
+                   vitrive.add(choa1);
                }
                else
                {
@@ -693,8 +660,7 @@ public class DatXeActivity extends AppCompatActivity  {
                    imb.add(C8);
                    soluongve.setText(imb.size()+"  Chổ");
                    tienve.setText(imb.size()*250000+" VNĐ");
-                   veXE= new VeXE(1,choa1,"2500","1");
-                   listvx.add(veXE);
+                   vitrive.add(choa1);
                }
                else
                {
@@ -714,8 +680,7 @@ public class DatXeActivity extends AppCompatActivity  {
                    imb.add(C9);
                    soluongve.setText(imb.size()+"  Chổ");
                    tienve.setText(imb.size()*250000+" VNĐ");
-                   veXE= new VeXE(1,choa1,"2500","1");
-                   listvx.add(veXE);
+                   vitrive.add(choa1);
                }
                else
                {
@@ -735,8 +700,7 @@ public class DatXeActivity extends AppCompatActivity  {
                     imb.add(D1);
                     soluongve.setText(imb.size()+"  Chổ");
                     tienve.setText(imb.size()*250000+" VNĐ");
-                    veXE= new VeXE(1,choa1,"2500","1");
-                    listvx.add(veXE);
+                    vitrive.add(choa1);
                 }
                 else
                 {
@@ -756,8 +720,7 @@ public class DatXeActivity extends AppCompatActivity  {
                     imb.add(D2);
                     soluongve.setText(imb.size()+"  Chổ");
                     tienve.setText(imb.size()*250000+" VNĐ");
-                    veXE= new VeXE(1,choa1,"2500","1");
-                    listvx.add(veXE);
+                    vitrive.add(choa1);
                 }
                 else
                 {
@@ -777,8 +740,7 @@ public class DatXeActivity extends AppCompatActivity  {
                     imb.add(D3);
                     soluongve.setText(imb.size()+"  Chổ");
                     tienve.setText(imb.size()*250000+" VNĐ");
-                    veXE= new VeXE(1,choa1,"2500","1");
-                    listvx.add(veXE);
+                    vitrive.add(choa1);
                 }
                 else
                 {
@@ -798,8 +760,7 @@ public class DatXeActivity extends AppCompatActivity  {
                     imb.add(D4);
                     soluongve.setText(imb.size()+"  Chổ");
                     tienve.setText(imb.size()*250000+" VNĐ");
-                    veXE= new VeXE(1,choa1,"2500","1");
-                    listvx.add(veXE);
+                    vitrive.add(choa1);
                 }
                 else
                 {
@@ -819,8 +780,7 @@ public class DatXeActivity extends AppCompatActivity  {
                     imb.add(D5);
                     soluongve.setText(imb.size()+"  Chổ");
                     tienve.setText(imb.size()*250000+" VNĐ");
-                    veXE= new VeXE(1,choa1,"2500","1");
-                    listvx.add(veXE);
+                    vitrive.add(choa1);
                 }
                 else
                 {
@@ -840,8 +800,7 @@ public class DatXeActivity extends AppCompatActivity  {
                     imb.add(D6);
                     soluongve.setText(imb.size()+"  Chổ");
                     tienve.setText(imb.size()*250000+" VNĐ");
-                    veXE= new VeXE(1,choa1,"2500","1");
-                    listvx.add(veXE);
+                    vitrive.add(choa1);
                 }
                 else
                 {
@@ -861,8 +820,7 @@ public class DatXeActivity extends AppCompatActivity  {
                     imb.add(D7);
                     soluongve.setText(imb.size()+"  Chổ");
                     tienve.setText(imb.size()*250000+" VNĐ");
-                    veXE= new VeXE(1,choa1,"2500","1");
-                    listvx.add(veXE);
+                    vitrive.add(choa1);
                 }
                 else
                 {
@@ -882,8 +840,7 @@ public class DatXeActivity extends AppCompatActivity  {
                     imb.add(D8);
                     soluongve.setText(imb.size()+"  Chổ");
                     tienve.setText(imb.size()*250000+" VNĐ");
-                    veXE= new VeXE(1,choa1,"2500","1");
-                    listvx.add(veXE);
+                    vitrive.add(choa1);
                 }
                 else
                 {
@@ -902,8 +859,7 @@ public class DatXeActivity extends AppCompatActivity  {
                     imb.add(D9);
                     soluongve.setText(imb.size()+"  Chổ");
                     tienve.setText(imb.size()*250000+" VNĐ");
-                    veXE= new VeXE(1,choa1,"2500","1");
-                    listvx.add(veXE);
+                    vitrive.add(choa1);
 
                 }
                 else
@@ -1022,9 +978,10 @@ public class DatXeActivity extends AppCompatActivity  {
         String soxe=soxedat;
         String gia=tienve.getText().toString();
         String soluongdat=soluongve.getText().toString();
-        for (int i=0;i<listvx.size();i++)
+        for (int i=0;i<vitrive.size();i++)
         {
-             vitrine=listvx.get(i).getVitri().toString();
+             vitrine=vitrive.get(i).toString();
+
 
         }
         String vitrive=vitrine;

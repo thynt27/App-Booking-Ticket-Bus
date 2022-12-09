@@ -69,6 +69,10 @@ public class TrangChuFragment extends Fragment {
         imgNewsinMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Fragment feedBackFragment = new FeedBackFragment();
+                FragmentTransaction transaction = getFragmentManager().beginTransaction();
+                transaction.replace(R.id.trangchu_fragmenttt, feedBackFragment);
+                transaction.commit();
             }
         });
 
