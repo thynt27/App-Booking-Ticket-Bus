@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.pro1121.Fragment.TrangChuFragment;
 import com.example.pro1121.R;
 import com.example.pro1121.view.MainActivity;
 
@@ -65,6 +66,7 @@ public class TinTuc2Activity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
 
     }
 

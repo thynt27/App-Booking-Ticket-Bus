@@ -35,7 +35,6 @@ import com.example.pro1121.Fragment.TimChuyenFragment;
 import com.example.pro1121.Fragment.TimTramFragment;
 import com.example.pro1121.Fragment.TimVeFragment;
 import com.example.pro1121.Fragment.TrangChuFragment;
-import com.example.pro1121.Fragment.VeXeFragment;
 import com.example.pro1121.R;
 import com.example.pro1121.news.TinTucActivity;
 import com.facebook.login.LoginManager;
@@ -105,6 +104,12 @@ public class MainActivity extends AppCompatActivity {
 
 
         showProfile();
+
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction()
+                .replace(R.id.frLayout, new TrangChuFragment())
+                .commit();
+        toolbar.setTitle("Trang Chủ");
 
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -179,6 +184,8 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
+
     //Sự kiện cho nút menu
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {

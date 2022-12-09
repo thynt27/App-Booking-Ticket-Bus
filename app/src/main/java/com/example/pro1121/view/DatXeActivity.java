@@ -1037,6 +1037,7 @@ public class DatXeActivity extends AppCompatActivity  {
 
 
         }
+        Log.d("TAG", "onSaveClick: "+veXE.getVitri());
 
 
 

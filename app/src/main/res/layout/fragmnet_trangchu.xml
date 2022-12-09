@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:id="@+id/trangchu_fragmenttt"
     android:layout_height="match_parent">
 
     <TextView
@@ -60,9 +61,18 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="92dp"
+        android:layout_marginLeft="85dp"
         android:layout_marginTop="515dp"
-        android:text="News"
+        android:text="FeedBack"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="265dp"
+        android:layout_marginTop="515dp"
+        android:text="Reset Pass"
         android:textColor="@color/black"
         android:textStyle="bold" />
 
@@ -96,7 +106,15 @@
         android:layout_height="100dp"
         android:layout_marginLeft="60dp"
         android:layout_marginTop="410dp"
-        android:src="@drawable/news" />
+        android:src="@drawable/feedback" />
+
+    <ImageView
+        android:id="@+id/doipass"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="250dp"
+        android:layout_marginTop="410dp"
+        android:src="@drawable/doipas" />
 
     <ImageView
         android:id="@+id/imgExitinMain"

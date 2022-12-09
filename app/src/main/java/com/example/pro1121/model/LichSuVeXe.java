@@ -1,21 +1,9 @@
 package com.example.pro1121.model;
 
-public class VeXe {
+public class LichSuVeXe {
     private String idVeXe,diemDen,diemDi,gia,gioChuyenDi,gioDatVe,soLuongChoDat,soXe,viTriGhe;
 
-    public VeXe() {
-    }
-
-    public VeXe(String idVeXe,String diemDen, String diemDi, String gia, String gioChuyenDi, String gioDatVe, String soLuongChoDat, String soXe, String viTriGhe) {
-        this.idVeXe= idVeXe;
-        this.diemDen = diemDen;
-        this.diemDi = diemDi;
-        this.gia = gia;
-        this.gioChuyenDi = gioChuyenDi;
-        this.gioDatVe = gioDatVe;
-        this.soLuongChoDat = soLuongChoDat;
-        this.soXe = soXe;
-        this.viTriGhe = viTriGhe;
+    public LichSuVeXe() {
     }
 
     public String getIdVeXe() {
@@ -87,6 +75,18 @@ public class VeXe {
     }
 
     public void setViTriGhe(String viTriGhe) {
+        this.viTriGhe = viTriGhe;
+    }
+
+    public LichSuVeXe(String idVeXe, String diemDen, String diemDi, String gia, String gioChuyenDi, String gioDatVe, String soLuongChoDat, String soXe, String viTriGhe) {
+        this.idVeXe = idVeXe;
+        this.diemDen = diemDen;
+        this.diemDi = diemDi;
+        this.gia = gia;
+        this.gioChuyenDi = gioChuyenDi;
+        this.gioDatVe = gioDatVe;
+        this.soLuongChoDat = soLuongChoDat;
+        this.soXe = soXe;
         this.viTriGhe = viTriGhe;
     }
 }
