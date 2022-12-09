@@ -2,7 +2,7 @@ package com.example.pro1121.model;
 
 public class VeXE {
     int id;
-    String idvexe,vitri,gia,soluong;
+    String idvexe, vitri, gia, soluong;
 
     public int getId() {
         return id;
