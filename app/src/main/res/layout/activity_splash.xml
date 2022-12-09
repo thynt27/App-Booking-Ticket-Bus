@@ -21,7 +21,7 @@
         android:id="@+id/textView16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bock Bus Online"
+        android:text="BusBooking Online"
         android:textStyle="bold"
         android:textColor="@color/black"
         android:textSize="25dp"

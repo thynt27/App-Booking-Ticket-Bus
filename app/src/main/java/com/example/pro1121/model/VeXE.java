@@ -2,6 +2,7 @@ package com.example.pro1121.model;
 
 public class VeXE {
 
+
     int id;
     String idvexe,vitri,gia,soluong;
 
@@ -12,6 +13,8 @@ public class VeXE {
         this.gia = gia;
         this.soluong = soluong;
     }
+
+
 
     public int getId() {
         return id;
@@ -52,4 +55,13 @@ public class VeXE {
     public void setSoluong(String soluong) {
         this.soluong = soluong;
     }
+
+
+    public VeXE(int id, String vitri, String gia, String soluong) {
+        this.id = id;
+        this.vitri = vitri;
+        this.gia = gia;
+        this.soluong = soluong;
+    }
+
 }
