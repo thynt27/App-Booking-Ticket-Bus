@@ -34,7 +34,7 @@ import com.example.pro1121.Fragment.TimChuyenFragment;
 import com.example.pro1121.R;
 import com.example.pro1121.model.ChuyenXE;
 
-import com.example.pro1121.model.VeXe;
+
 import com.example.pro1121.model.VeXeDat;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -1037,7 +1037,7 @@ public class DatXeActivity extends AppCompatActivity  {
 
 
         }
-        Log.d("TAG", "onSaveClick: "+veXE.getVitri());
+//        Log.d("TAG", "onSaveClick: "+veXE.getVitri());
 
 
 
