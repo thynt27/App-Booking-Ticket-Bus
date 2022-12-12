@@ -4,6 +4,7 @@ public class VeXE {
 
 
     int id;
+<<<<<<< Updated upstream
     String idvexe,vitri,gia,soluong;
 
     public VeXE(int id, String idvexe, String vitri, String gia, String soluong) {
@@ -15,6 +16,12 @@ public class VeXE {
     }
 
 
+=======
+    String idvexe;
+    static String vitri;
+    String gia;
+    String soluong;
+>>>>>>> Stashed changes
 
     public int getId() {
         return id;
@@ -32,7 +39,7 @@ public class VeXE {
         this.idvexe = idvexe;
     }
 
-    public String getVitri() {
+    public static String getVitri() {
         return vitri;
     }
 
