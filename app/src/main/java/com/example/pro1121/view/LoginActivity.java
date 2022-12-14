@@ -175,7 +175,7 @@ public class LoginActivity extends AppCompatActivity {
         FirebaseUser currentUser = firebaseAuth.getCurrentUser();
 
         if (currentUser != null) {
-            Toast.makeText(LoginActivity.this, "Currently Logged in: " + currentUser.getEmail(), Toast.LENGTH_LONG).show();
+
         }
 
 
@@ -277,7 +277,8 @@ public class LoginActivity extends AppCompatActivity {
         }
 
 
-        firebaseAuth.signInWithEmailAndPassword(mail,pass).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+        firebaseAuth.signInWithEmailAndPassword(mail,pass)
+                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
              if (task.isSuccessful()){
@@ -291,7 +292,6 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
-    //Check remember me
 
 
     private void onClickForPassword(){

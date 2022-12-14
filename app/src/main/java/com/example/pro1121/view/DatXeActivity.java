@@ -34,11 +34,8 @@ import com.example.pro1121.Fragment.TimChuyenFragment;
 import com.example.pro1121.R;
 import com.example.pro1121.model.ChuyenXE;
 
-<<<<<<< Updated upstream
-
-=======
 import com.example.pro1121.model.VeXE;
->>>>>>> Stashed changes
+
 import com.example.pro1121.model.VeXeDat;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -1041,11 +1038,11 @@ public class DatXeActivity extends AppCompatActivity  {
 
 
         }
-<<<<<<< Updated upstream
+
 //        Log.d("TAG", "onSaveClick: "+veXE.getVitri());
-=======
+
         Log.d("TAG", "onSaveClick: "+ VeXE.getVitri());
->>>>>>> Stashed changes
+
 
 
 

@@ -113,8 +113,7 @@ public class RegisterActivity extends AppCompatActivity{
             public void onComplete(@NonNull Task<AuthResult> task) {
 
                 if (task.isSuccessful()){
-                    User user = new User(fullname,age,email);
-
+                    User user = new User(fullname,age,email,pass);
                     FirebaseDatabase.getInstance().getReference("Users")
                             .child(FirebaseAuth.getInstance().getUid())
                             .setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -131,7 +130,7 @@ public class RegisterActivity extends AppCompatActivity{
                     startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
 
                 }else{
-                    Toast.makeText(RegisterActivity.this, "Tạo tài khoản đã tồn tại!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterActivity.this, " Tài khoản đã tồn tại!", Toast.LENGTH_SHORT).show();
                 }
             }
         });
