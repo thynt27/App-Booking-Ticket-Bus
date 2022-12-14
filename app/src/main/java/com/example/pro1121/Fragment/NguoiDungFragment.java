@@ -64,24 +64,6 @@ public class NguoiDungFragment extends Fragment {
         progressDialog = new ProgressDialog(getActivity());
 
         setProFile();
-        clickAvatar();
-
-        return view;
-    }
-
-    // set Thông tin
-    private void setProFile() {
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        if (user == null) {
-            return;
-        }
-        edtNameinProFile.setText(user.getDisplayName());
-        edtEmailinProFile.setText(user.getEmail());
-        Glide.with(getActivity()).load(user.getPhotoUrl()).error(R.drawable.ic_avatar);
-        Log.d("<><><><><>TAG", "setProFile: ");
-    }
-
-    private void clickAvatar() {
         imgAvatarinProFile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -102,6 +84,20 @@ public class NguoiDungFragment extends Fragment {
                 onClickEditEmail();
             }
         });
+
+        return view;
+    }
+
+    // set Thông tin
+    private void setProFile() {
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user == null) {
+            return;
+        }
+        edtNameinProFile.setText(user.getDisplayName());
+        edtEmailinProFile.setText(user.getEmail());
+        Glide.with(getActivity()).load(user.getPhotoUrl()).error(R.drawable.ic_avatar);
+        Log.d("<><><><><>TAG", "setProFile: ");
     }
 
     private void openAlbum() {
